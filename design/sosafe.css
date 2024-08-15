@@ -1,0 +1,207 @@
+/* Estilos generales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #121212; /* Fondo oscuro para todo el cuerpo */
+  color: #ffffff; /* Color de texto blanco */
+  line-height: 1.6;
+  padding: 20px;
+}
+
+a {
+  color: #1e88e5; /* Color de enlaces */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* Estilos del header */
+header {
+  background-color: #1f1f1f;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav li {
+  margin-left: 20px;
+}
+
+/* Estilos de la sección del video */
+.video-container {
+  margin: 40px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.video-container iframe {
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos de la sección de materiales */
+.materials {
+  background-color: #424242;
+  padding: 40px 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.materials h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.materials ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.materials li {
+  margin: 10px;
+  padding: 10px 15px;
+  background-color: #616161;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.materials li:hover {
+  background-color: #757575;
+}
+
+/* Estilos de la sección de descripción del video */
+.video-description {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+  color: #e0e0e0; /* Color de texto claro para mejor legibilidad */
+  line-height: 1.6;
+  background-color: #1f1f1f; /* Fondo oscuro */
+  border-radius: 12px; /* Bordes más redondeados */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Sombra más intensa */
+  transition: transform 0.3s; /* Transición suave para el efecto hover */
+}
+
+.video-description:hover {
+  transform: scale(1.02); /* Efecto de aumento al pasar el ratón */
+}
+
+.video-description h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffffff; /* Color blanco para el título */
+  font-size: 28px;
+  font-weight: 600; /* Peso de fuente más fuerte para destacar */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Sombra de texto para mayor profundidad */
+}
+
+.video-description p {
+  margin-bottom: 20px;
+  font-size: 18px;
+  line-height: 1.8; /* Mayor interlineado para mejor legibilidad */
+}
+
+.video-description a {
+  color: #1e88e5; /* Color azul claro para enlaces */
+  text-decoration: none;
+  font-weight: bold; /* Negrita para enlaces */
+  transition: color 0.3s; /* Transición suave para el color del enlace */
+}
+
+.video-description a:hover {
+  text-decoration: underline; /* Subrayado al pasar el ratón */
+  color: #42a5f5; /* Color más claro al pasar el ratón */
+}
+
+/* Estilos de la sección de últimas publicaciones */
+.latest-posts {
+  background-color: #424242;
+  padding: 40px 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.latest-posts h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.post-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.post-item {
+  width: 300px;
+  margin: 20px;
+  background-color: #616161;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.post-item:hover {
+  transform: scale(1.05);
+}
+
+.post-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.post-content {
+  padding: 20px;
+}
+
+.post-content h3 {
+  margin-bottom: 10px;
+}
+
+/* Estilos del footer */
+footer {
+  background-color: #1f1f1f;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+  font-size: 14px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .post-item {
+      width: 100%; /* Abarca todo el ancho en dispositivos más pequeños */
+      margin: 10px 0; /* Espaciado vertical */
+  }
+}
