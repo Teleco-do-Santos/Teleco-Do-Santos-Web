@@ -1,0 +1,261 @@
+/* Estilos generales */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+  
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    line-height: 1.6;
+}
+  
+a {
+    color: #1e88e5;
+    text-decoration: none;
+}
+  
+a:hover {
+    text-decoration: underline;
+}
+  
+ul {
+    list-style-type: none;
+}
+  
+/* Estilos del header */
+header {
+    background-color: #1f1f1f;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+  
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+  
+nav ul {
+    display: flex;
+}
+  
+nav li {
+    margin-left: 20px;
+}
+
+
+
+.requirements a:hover {
+  color: #ff4081; /* Color al pasar el ratón */
+}
+
+.requirements {
+  background-color: #000000;
+  padding: 40px;
+  text-align: center;
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.google-button {
+  display: inline-flex;
+  align-items: center;
+  background-color: #4285f4; /* Color de fondo */
+  color: #fff; /* Color del texto */
+  padding: 12px 24px; /* Espaciado interno */
+  border-radius: 4px; /* Bordes redondeados */
+  text-decoration: none; /* Sin subrayado */
+  font-size: 16px; /* Tamaño de fuente */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
+  margin: 0 10px; /* Espaciado entre botones */
+}
+
+.google-button i {
+  margin-right: 8px; /* Espaciado entre icono y texto */
+  font-size: 20px; /* Tamaño del icono */
+}
+
+.google-button:hover {
+  background-color: #3367d6; /* Color más oscuro al pasar el ratón */
+  transform: scale(1.05); /* Efecto de aumento al pasar el ratón */
+}
+
+.google-button:active {
+  background-color: #2a56c6; /* Color aún más oscuro al hacer clic */
+}
+
+
+  
+/* Estilos de la sección del video */
+.video-container {
+    margin: 40px 0;
+    display: flex;
+    justify-content: center;
+}
+  
+.video-container iframe {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+  
+/* Estilos de la sección de descripción del video */
+.video-description {
+    padding: 40px 20px;
+    background-color: #1e1e1e; /* Fondo ligeramente más claro */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
+    max-width: 800px; /* Ancho máximo */
+    margin: 20px auto; /* Centrado */
+}
+
+.video-description h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px; /* Tamaño de fuente más grande */
+    color: #1e88e5; /* Color azul para el título */
+}
+
+.video-description h3 {
+    margin-top: 20px;
+    font-size: 24px; /* Tamaño de fuente para subtítulos */
+    color: #ffffff; /* Color blanco */
+}
+
+.video-description p {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8; /* Mayor espacio entre líneas */
+    font-size: 16px; /* Tamaño de fuente */
+    color: #e0e0e0; /* Color gris claro para mejor legibilidad */
+}
+
+.video-description ul {
+    margin-top: 10px; /* Espacio superior para la lista */
+    padding-left: 20px; /* Sangría para la lista */
+}
+
+.video-description li {
+    margin-bottom: 10px; /* Espacio entre elementos de lista */
+    background-color: #424242; /* Fondo para los elementos de la lista */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 4px; /* Bordes redondeados */
+    transition: background-color 0.3s; /* Efecto de transición */
+}
+
+.video-description li:hover {
+    background-color: #616161; /* Cambio de color al pasar el ratón */
+}
+
+.video-description a {
+    color: #1e88e5; /* Color de los enlaces */
+    text-decoration: underline; /* Subrayado de enlaces */
+}
+
+.video-description a:hover {
+    color: #ff4081; /* Color diferente al pasar el ratón */
+}
+
+/* Estilos para los ejemplos de código */
+.code-example {
+  background-color: #1f1f1f;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.code-example h4 {
+  color: #1e88e5;
+  margin-bottom: 10px;
+}
+
+.code-example pre {
+  background-color: #2b2b2b;
+  padding: 10px;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  color: #e0e0e0;
+}
+
+
+
+/* Estilos de la sección de últimas publicaciones */
+.latest-posts {
+    background-color: #424242;
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin: 20px;
+}
+  
+.latest-posts h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+  
+.post-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+  
+.post-item {
+    width: 300px;
+    margin: 20px;
+    background-color: #616161;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+  
+.post-item:hover {
+    transform: scale(1.05);
+}
+  
+.post-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+  
+.post-content {
+    padding: 20px;
+}
+  
+.post-content h3 {
+    margin-bottom: 10px;
+}
+  
+/* Estilos del footer */
+footer {
+    background-color: #1f1f1f;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+  
+footer p {
+    font-size: 14px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .post-item {
+        width: 100%; /* Abarca todo el ancho en dispositivos más pequeños */
+        margin: 10px 0; /* Espaciado vertical */
+    }
+}

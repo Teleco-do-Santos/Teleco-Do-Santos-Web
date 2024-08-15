@@ -1,0 +1,289 @@
+/* CSS */
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif; /* Cambia a Roboto */
+  background-color: #121212; /* Tema oscuro */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Header Styles */
+header {
+  background-color: #1e1e1e; /* Gris oscuro */
+  padding: 1em;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+  width: 100%; /* Ancho del header */
+  margin: 0 auto; /* Centrar el header */
+  border-bottom: 1px solid #444; /* Borde inferior */
+  position: fixed; /* Fija la barra de navegación */
+  top: 0; /* Posición superior */
+  left: 0; /* Posición izquierda */
+  right: 0; /* Posición derecha */
+  z-index: 10; /* Eleva la barra de navegación */
+}
+
+.nav {
+  display: flex;
+  justify-content: center; /* Centra los elementos */
+  align-items: center;
+  padding: 0; /* Sin padding adicional */
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Centra los elementos en la barra */
+  flex-wrap: nowrap; /* Mantiene los elementos en una sola línea */
+}
+
+.nav li {
+  margin: 0 15px; /* Espacio uniforme entre los elementos */
+}
+
+.nav a {
+  text-decoration: none;
+  color: #ffffff; /* Color blanco para el texto */
+  padding: 10px 15px; /* Espaciado interno para mejorar el área clickeable */
+  border-radius: 20px; /* Bordes redondeados */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves */
+}
+
+.nav a:hover {
+  background-color: #4285f4; /* Color de fondo azul al pasar el cursor */
+  color: #fff; /* Mantiene el color blanco del texto */
+}
+
+/* Responsive Design for Navigation */
+@media (max-width: 768px) {
+  .nav ul {
+    flex-wrap: nowrap; /* Mantiene los elementos en una sola línea */
+    overflow-x: auto; /* Permite desplazamiento horizontal si es necesario */
+  }
+
+  .nav li {
+    margin: 0 10px; /* Espacio entre los elementos en pantallas pequeñas */
+  }
+}
+
+/* Hero Styles */
+.contenedor-principal {
+  background-image: url("foto\ backgrund/901.png");
+  background-size: cover; /* Cambia a cover para que la imagen cubra todo el contenedor */
+  background-position: center;
+  height: 100vh; /* Ajusta la altura */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Para el contenido absoluto */
+  width: 100vw;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  color: #fff;
+  text-align: center;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%; /* Centra verticalmente */
+  left: 50%; /* Centra horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta la posición para centrar */
+  text-align: center;
+  z-index: 2; /* Asegura que el contenido esté por encima de la imagen */
+  padding: 20px; /* Añade un poco de padding */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para mejorar la legibilidad */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+.hero-content h1 {
+  font-size: 48px; /* Tamaño de letra del título */
+  margin-bottom: 0.5em; /* Espacio inferior */
+}
+
+.hero-content p {
+  font-size: 24px; /* Tamaño de letra del párrafo */
+  margin-bottom: 1em; /* Espacio inferior */
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  background-color: #4285f4; /* Color azul de Google */
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  margin: 0 10px; /* Espacio entre botones */
+  border-radius: 24px; /* Borde redondeado */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+.btn:hover {
+  background-color: #357ae8; /* Color más oscuro al pasar el cursor */
+  transform: translateY(-2px); /* Efecto de elevación */
+}
+
+/* Additional Content Styles */
+.additional-content {
+  display: flex;
+  flex-direction: column; /* Cambia a columna para apilar las secciones */
+  align-items: center;
+  margin-top: 10px; /* Espacio superior para separar de .hero-content */
+}
+
+.left-content, .right-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%; /* Ancho de la sección */
+  margin: 40px 0; /* Espacio entre las filas */
+}
+
+.side-image {
+  width: 40%; /* Ajusta el ancho de las imágenes laterales */
+  height: auto; /* Mantiene la proporción de la imagen */
+  border-radius: 20px; /* Bordes redondeados opcionales */
+}
+
+.left-content p, .right-content p {
+  width: 50%; /* Ajusta el ancho del texto */
+  margin: 0 30px; /* Espacio entre la imagen y el texto */
+  font-size: 20px; /* Tamaño del texto */
+  color: #fff; /* Color del texto */
+  text-align: left; /* Alineación del texto */
+}
+
+/* Blog Styles */
+.blog {
+  display: flex;
+  flex-direction: column; /* Mantiene la estructura vertical para el título */
+  align-items: center;
+  padding: 2em;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+}
+
+.blog-posts {
+  display: flex;
+  justify-content: center; /* Centra los elementos en la fila */
+  align-items: flex-start; /* Alinea los elementos al inicio */
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples filas si es necesario */
+}
+
+.blog-post {
+  flex: 1 1 300px; /* Permite que cada blog ocupe el mismo espacio, con un ancho mínimo de 300px */
+  margin: 20px; /* Espacio entre los blogs */
+  max-width: 300px; /* Establece un ancho máximo para los blogs */
+  background-color: #444;
+  padding: 20px;
+  border-radius: 19px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-decoration: none; /* Elimina el subrayado del enlace */
+  color: inherit; /* Mantiene el color del texto heredado */
+  transition: transform 0.2s ease; /* Añade una transición suave al efecto hover */
+}
+
+.blog-post:hover {
+  transform: scale(1.05); /* Efecto de aumento al pasar el cursor */
+}
+
+.blog-post img {
+  width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+  height: 200px; /* Establece una altura fija para todas las imágenes */
+  object-fit: cover; /* Mantiene la proporción de la imagen y recorta si es necesario */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+.leer-mas {
+  background-color: #4285f4; /* Color azul de Google */
+  color: #fff; /* Texto blanco */
+  border: none; /* Sin borde */
+  padding: 10px 20px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de fuente */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  border-radius: 4px; /* Bordes redondeados */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+  display: inline-flex; /* Para centrar el texto */
+  align-items: center; /* Alinea verticalmente */
+}
+
+.leer-mas:hover {
+  background-color: #357ae8; /* Color más oscuro al pasar el cursor */
+  transform: translateY(-2px); /* Efecto de elevación */
+}
+
+.leer-mas:focus {
+  outline: none; /* Elimina el contorno por defecto */
+  box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.5); /* Sombra de enfoque */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .left-content, .right-content {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    align-items: center;
+  }
+
+  .side-image {
+    width: 80%; /* Aumenta el tamaño de las imágenes en pantallas pequeñas */
+    margin-bottom: 20px; /* Espacio inferior para separar de texto */
+  }
+
+  .left-content p, .right-content p {
+    width: 100%; /* Texto ocupa todo el ancho */
+    margin: 0;
+    text-align: center; /* Centra el texto */
+  }
+
+  .blog-posts {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    align-items: center; /* Centra los elementos */
+  }
+
+  .blog-post {
+    max-width: 90%; /* Aumenta el ancho en pantallas pequeñas */
+    margin: 10px 0; /* Espacio entre los blogs */
+  }
+}
+
+/* Footer Styles */
+footer {
+  background-color: #333;
+  padding: 1em;
+  text-align: center;
+  color: #fff;
+  margin-top: 30px;
+}
+
+footer p {
+  margin: 0;
+}

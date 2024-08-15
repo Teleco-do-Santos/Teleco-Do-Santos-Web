@@ -1,0 +1,129 @@
+body {
+    background-color: #121212;
+    color: #E0E0E0;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #1E1E1E;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    padding: 15px 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #1fe449;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.logo a:hover {
+    color: #FFFFFF; /* Cambia el color al pasar el mouse */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-left: 30px;
+}
+
+nav a {
+    color: #E0E0E0;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px); /* Ajusta la altura del main */
+}
+
+.container {
+    background-color: #1E1E1E;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.container:hover {
+    transform: scale(1.02); /* Efecto de escalado al pasar el mouse */
+}
+
+h1 {
+    margin-bottom: 15px;
+    font-size: 2.5em;
+    color: #2aff2a;
+}
+
+p {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+.social-icons {
+    margin: 30px 0;
+}
+
+.social-icons a {
+    margin: 0 15px;
+    display: inline-block;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.social-icons img {
+    width: 50px;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+.contact-info {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.contact-info h2 {
+    font-size: 1.5em;
+    color: #53fd28;
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: #54ff1131;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-info a:hover {
+    color: #09cf02;
+    text-decoration: underline;
+}
