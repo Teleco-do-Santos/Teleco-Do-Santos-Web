@@ -82,7 +82,7 @@ header {
 
 /* Hero Styles */
 .contenedor-principal {
-  background-image: url("foto/backgrund/901.png");
+  background-image: url("foto\backgrund/901.png");
   background-size: cover; /* Cambia a cover para que la imagen cubra todo el contenedor */
   background-position: center;
   height: 100vh; /* Ajusta la altura */
