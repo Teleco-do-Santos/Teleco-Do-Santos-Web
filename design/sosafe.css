@@ -28,25 +28,45 @@ ul {
 
 /* Estilos del header */
 header {
-  background-color: #1f1f1f;
-  padding: 20px;
+  background-color: #ffffff; /* Fondo blanco para el header */
+  padding: 10px 20px; /* Espaciado superior e inferior reducido */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
+  border-radius: 8px; /* Bordes redondeados */
 }
 
 .logo {
   font-size: 24px;
   font-weight: bold;
+  color: #1e88e5; /* Color del logo */
 }
 
 nav ul {
   display: flex;
+  align-items: center; /* Alinear verticalmente los elementos */
 }
 
 nav li {
   margin-left: 20px;
+  position: relative; /* Para el efecto de subrayado */
+}
+
+nav li::after {
+  content: ''; /* Crea un pseudo-elemento */
+  display: block;
+  height: 2px; /* Grosor del subrayado */
+  background: #1e88e5; /* Color del subrayado */
+  width: 0; /* Ancho inicial */
+  transition: width 0.3s; /* Transición suave */
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Espaciado del subrayado */
+}
+
+nav li:hover::after {
+  width: 100%; /* Expande el subrayado al pasar el ratón */
 }
 
 /* Estilos de la sección del video */
@@ -200,8 +220,23 @@ footer p {
 
 /* Estilos responsivos */
 @media (max-width: 768px) {
+  header {
+    flex-direction: column; /* Cambia la dirección a columna en móviles */
+    align-items: flex-start; /* Alinear a la izquierda */
+  }
+
+  nav ul {
+    flex-direction: column; /* Cambia la dirección a columna */
+    width: 100%; /* Ancho completo */
+    padding: 10px 0; /* Espaciado vertical */
+  }
+
+  nav li {
+    margin: 10px 0; /* Espaciado vertical entre elementos */
+  }
+
   .post-item {
-      width: 100%; /* Abarca todo el ancho en dispositivos más pequeños */
-      margin: 10px 0; /* Espaciado vertical */
+    width: 100%; /* Abarca todo el ancho en dispositivos más pequeños */
+    margin: 10px 0; /* Espaciado vertical */
   }
 }
