@@ -28,19 +28,19 @@ ul {
 
 /* Estilos del header */
 header {
-  background-color: #ffffff; /* Fondo blanco para el header */
+  background-color: #1f1f1f; /* Fondo oscuro para el header */
   padding: 10px 20px; /* Espaciado superior e inferior reducido */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Sombra más sutil */
   border-radius: 8px; /* Bordes redondeados */
 }
 
 .logo {
   font-size: 24px;
   font-weight: bold;
-  color: #1e88e5; /* Color del logo */
+  color: #ffffff; /* Color blanco para el logo */
 }
 
 nav ul {
@@ -67,6 +67,7 @@ nav li::after {
 
 nav li:hover::after {
   width: 100%; /* Expande el subrayado al pasar el ratón */
+  background: #42a5f5; /* Color más claro al pasar el ratón */
 }
 
 /* Estilos de la sección del video */
