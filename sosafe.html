@@ -3,17 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sosafe</title>
-  <link rel="stylesheet" href="design/sosafe.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Descripción de mi sitio web.">
+  <meta name="keywords" content="palabras, clave, aquí">
+  <title>Mi Sitio Web</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
     <div class="logo">Teleco do Santos</div>
+    <span class="burger-icon" onclick="toggleMenu()">&#9776;</span>
     <nav>
       <ul>
         <li><a href="index.html">Inicio</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="#">Contacto</a></li>
         <li><a href="blogs.html">Publicaciones</a></li>
       </ul>
     </nav>
@@ -29,7 +31,6 @@
       <p>SOSAFE es una aplicación diseñada para mejorar la seguridad en las comunidades al conectar a los vecinos con servicios de emergencia y autoridades locales. Fue creada en 2014 después de un asalto que vivió uno de sus fundadores, con el objetivo de facilitar la comunicación y colaboración entre las personas para resolver problemas de seguridad en sus barrios.</p>
       
       <h3>¿Cómo Funciona SOSAFE?</h3>
-      
       <h4>Reportar Incidentes</h4>
       <p>Los usuarios pueden informar sobre situaciones como robos, accidentes, luces apagadas o mascotas perdidas. Solo necesitan seleccionar el tipo de incidente y proporcionar detalles.</p>
       
@@ -78,7 +79,14 @@
   </main>
 
   <footer>
-    <p>&copy; 2024 Teleco Do Santos. Todos los derechos reservados.</p>
+    <p>&copy; 2023 Mi Sitio Web. Todos los derechos reservados.</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      var nav = document.querySelector('nav');
+      nav.classList.toggle('show');
+    }
+  </script>
 </body>
 </html>
