@@ -322,6 +322,7 @@ footer p {
     .burger-icon {
         display: none; /* Ocultar el icono hamburguesa en escritorio */
         color: #ffffff;
+        color: white;
     }
 
     nav {
