@@ -31,16 +31,35 @@ header {
   background-color: #1f1f1f; /* Fondo oscuro para el header */
   padding: 10px 20px; /* Espaciado superior e inferior reducido */
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Sombra más sutil */
-  border-radius: 8px; /* Bordes redondeados */
+  align-items: center; /* Centrar verticalmente los elementos */
+  justify-content: flex-start; /* Alinear a la izquierda */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra más sutil */
+  border-radius: 12px; /* Bordes redondeados */
+  position: relative; /* Para el icono de hamburguesa */
 }
 
+/* Estilo del logo */
 .logo {
   font-size: 24px;
   font-weight: bold;
   color: #ffffff; /* Color blanco para el logo */
+  flex: 1; /* Permitir que el logo ocupe el espacio disponible */
+  text-align: center; /* Centrar el texto del logo */
+  text-decoration: none; /* Eliminar subrayado */
+}
+
+/* Estilo del icono de menú hamburguesa */
+.burger-icon {
+  display: none; /* Oculto por defecto */
+  font-size: 30px; /* Tamaño del icono */
+  cursor: pointer; /* Cambiar cursor al pasar sobre el icono */
+  color: #1e88e5; /* Color del icono */
+  margin-right: 10px; /* Espacio entre el icono y el logo */
+}
+
+/* Estilos de la navegación */
+nav {
+  display: flex; /* Mostrar la navegación en dispositivos grandes */
 }
 
 nav ul {
@@ -49,7 +68,7 @@ nav ul {
 }
 
 nav li {
-  margin-left: 20px;
+  margin-left: 20px; /* Espacio entre los elementos de navegación */
   position: relative; /* Para el efecto de subrayado */
 }
 
@@ -67,7 +86,6 @@ nav li::after {
 
 nav li:hover::after {
   width: 100%; /* Expande el subrayado al pasar el ratón */
-  background: #42a5f5; /* Color más claro al pasar el ratón */
 }
 
 /* Estilos de la sección del video */
@@ -222,22 +240,53 @@ footer p {
 /* Estilos responsivos */
 @media (max-width: 768px) {
   header {
-    flex-direction: column; /* Cambia la dirección a columna en móviles */
-    align-items: flex-start; /* Alinear a la izquierda */
+    justify-content: flex-start; /* Alinear a la izquierda */
   }
 
-  nav ul {
-    flex-direction: column; /* Cambia la dirección a columna */
+  .burger-icon {
+    display: block; /* Mostrar el icono hamburguesa en móviles */
+  }
+
+  .logo {
+    margin-left: 10px; /* Espacio entre el icono de hamburguesa y el logo */
+  }
+
+  nav {
+    display: none; /* Ocultar la navegación por defecto en móviles */
+    flex-direction: column; /* Cambiar a dirección vertical */
     width: 100%; /* Ancho completo */
-    padding: 10px 0; /* Espaciado vertical */
+    background-color: #1f1f1f; /* Fondo oscuro para el menú */
+    position: absolute; /* Posicionar el menú */
+    top: 60px; /* Alinear debajo del header */
+    left: 0;
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+    z-index: 1000; /* Asegurarse de que esté por encima de otros elementos */
+  }
+
+  nav.show {
+    display: flex; /* Mostrar la navegación cuando se activa */
   }
 
   nav li {
     margin: 10px 0; /* Espaciado vertical entre elementos */
+    padding: 10px; /* Espaciado interno para los enlaces */
+    text-align: center; /* Centrar texto en los enlaces */
   }
 
   .post-item {
     width: 100%; /* Abarca todo el ancho en dispositivos más pequeños */
     margin: 10px 0; /* Espaciado vertical */
+  }
+}
+
+/* Estilos para dispositivos de escritorio */
+@media (min-width: 769px) {
+  .burger-icon {
+    display: none; /* Ocultar el icono hamburguesa en escritorio */
+  }
+
+  nav {
+    display: flex; /* Mostrar la navegación en dispositivos grandes */
   }
 }
