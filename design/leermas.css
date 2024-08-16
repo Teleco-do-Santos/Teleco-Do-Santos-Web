@@ -52,6 +52,7 @@ header {
     text-decoration: none;
     font-size: 24px;
     font-weight: bold;
+    text-align: center;
   }
 
 /* Estilos de la navegación */
@@ -404,3 +405,44 @@ footer p {
         display: flex; /* Mostrar la navegación en dispositivos grandes */
     }
 }
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+    /* Estilos para el encabezado en móvil */
+    header {
+      flex-direction: row; /* Cambiar a columna */
+      align-items: center; /* Centrar horizontalmente */
+      padding: 15px; /* Espaciado interno */
+    }
+  
+    /* Estilos para el logo en móvil */
+    .logo {
+      margin-bottom: 10px; /* Espacio entre el logo y el menú */
+      text-align: center; /* Centrar el texto del logo */
+      width: 100%; /* Ancho completo para centrar */
+    }
+  
+    /* Estilos para el menú de navegación en móvil */
+    nav {
+      width: 100%; /* Ancho completo */
+      text-align: center; /* Centrar el texto del menú */
+    }
+  
+    /* Estilos para la lista de navegación en móvil */
+    nav ul {
+      flex-direction: column; /* Apilar los enlaces verticalmente */
+      width: 100%; /* Ancho completo */
+    }
+  
+    /* Estilos para los elementos de la lista en móvil */
+    nav li {
+      margin-left: 0; /* Sin margen izquierdo */
+      margin-bottom: 10px; /* Espacio entre los enlaces */
+      width: 100%; /* Ancho completo */
+    }
+  
+    /* Estilos para los enlaces en móvil */
+    nav a {
+      display: block; /* Hacer que los enlaces ocupen todo el ancho */
+      text-align: center; /* Centrar el texto del enlace */
+    }
