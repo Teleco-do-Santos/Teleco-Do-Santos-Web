@@ -9,11 +9,12 @@
 </head>
 <body>
   <header>
-    <div class="logo">Teleco do Santos</div>
+    <span class="burger-icon" onclick="toggleMenu()">&#9776;</span>
+    <a href="index.html" class="logo">Teleco do Santos</a>
     <nav>
       <ul>
         <li><a href="index.html">Inicio</a></li>
-        <li><a href="#">Contacto</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
         <li><a href="blogs.html">Publicaciones</a></li>
       </ul>
     </nav>
@@ -144,5 +145,13 @@ while count < 3:
   <footer>
     <p>&copy; 2023 Mi Sitio Web. Todos los derechos reservados.</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      var nav = document.querySelector('nav');
+      nav.classList.toggle('show');
+    }
+  </script>
 </body>
 </html>
+
