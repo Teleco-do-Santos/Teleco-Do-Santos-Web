@@ -53,7 +53,7 @@ header {
   display: none; /* Oculto por defecto */
   font-size: 30px; /* Tamaño del icono */
   cursor: pointer; /* Cambiar cursor al pasar sobre el icono */
-  color: #1e88e5; /* Color del icono */
+  color: #ffffff; /* Cambiado a blanco para el icono */
   margin-right: 10px; /* Espacio entre el icono y el logo */
 }
 
@@ -284,6 +284,7 @@ footer p {
 @media (min-width: 769px) {
   .burger-icon {
     display: none; /* Ocultar el icono hamburguesa en escritorio */
+    color: #fff; /* Color del icono en blanco */
   }
 
   nav {
