@@ -291,6 +291,7 @@ footer p {
 
     .burger-icon {
         display: block; /* Mostrar el icono hamburguesa en móviles */
+        color: #ffffff;
     }
 
     nav {
@@ -321,8 +322,6 @@ footer p {
 @media (min-width: 769px) {
     .burger-icon {
         display: none; /* Ocultar el icono hamburguesa en escritorio */
-        color: #ffffff;
-        color: white;
     }
 
     nav {
