@@ -321,6 +321,7 @@ footer p {
 @media (min-width: 769px) {
     .burger-icon {
         display: none; /* Ocultar el icono hamburguesa en escritorio */
+        color: #ffffff;
     }
 
     nav {
