@@ -33,46 +33,105 @@ header {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    justify-content: space-between;
 }
   
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #ffffff; /* Color blanco para el logo */
-    flex: 1; /* Permitir que el logo ocupe el espacio disponible */
-    text-align: center; /* Centrar el texto del logo */
-}
+
+header {
+    display: flex; /* Usar flexbox para alinear elementos */
+    justify-content: space-between; /* Alinear logo a la izquierda y menú a la derecha */
+    align-items: center; /* Centrar verticalmente los elementos */
+    padding: 15px 30px; /* Espaciado interno */
+  }
+  
+  /* Estilos para el logo */
+  .logo {
+    color: #ffffff; /* Color del texto del logo */
+    text-decoration: none; /* Eliminar subrayado */
+    font-size: 24px; /* Tamaño de fuente del logo */
+    font-weight: bold; /* Texto en negrita */
+  }
 
 /* Estilos de la navegación */
-nav {
-    display: flex; /* Mostrar la navegación en dispositivos grandes */
-}
-
-nav ul {
-    display: flex; /* Mostrar los elementos de la navegación en fila */
-    align-items: center; /* Alinear verticalmente los elementos */
-}
-
-nav li {
-    margin-left: 20px; /* Espacio entre los elementos de navegación */
-    position: relative; /* Para el efecto de subrayado */
-}
-
-nav li::after {
-    content: ''; /* Crea un pseudo-elemento */
-    display: block;
-    height: 2px; /* Grosor del subrayado */
-    background: #1e88e5; /* Color del subrayado */
-    width: 0; /* Ancho inicial */
-    transition: width 0.3s; /* Transición suave */
-    position: absolute;
-    left: 0;
-    bottom: -5px; /* Espaciado del subrayado */
-}
-
-nav li:hover::after {
-    width: 100%; /* Expande el subrayado al pasar el ratón */
-}
+body {
+    background-color: #121212; /* Fondo oscuro */
+    color: #e0e0e0; /* Color del texto claro */
+    font-family: Arial, sans-serif; /* Fuente general */
+  }
+  
+  /* Estilos para el menú de navegación */
+  nav {
+    background-color: #1f1f1f; /* Fondo del menú */
+    padding: 15px; /* Espaciado interno */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra para profundidad */
+  }
+  
+  /* Estilos para la lista de navegación */
+  nav ul {
+    list-style-type: none; /* Eliminar puntos de la lista */
+    margin: 0; /* Eliminar márgenes */
+    padding: 0; /* Eliminar relleno */
+    display: flex; /* Usar flexbox para alinear horizontalmente */
+    justify-content: space-around; /* Espaciado uniforme entre elementos */
+  }
+  
+  /* Estilos para los elementos de la lista */
+  nav li {
+    margin: 0 10px; /* Espaciado entre los elementos de la lista */
+  }
+  
+  /* Estilos generales para el cuerpo */
+body {
+    background-color: #121212; /* Fondo oscuro */
+    color: #e0e0e0; /* Color del texto claro */
+    font-family: 'Roboto', sans-serif; /* Fuente general similar a la de Google */
+  }
+  
+  /* Estilos para el menú de navegación */
+  nav {
+    background-color: #1f1f1f; /* Fondo del menú */
+    padding: 15px 30px; /* Espaciado interno */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra para profundidad */
+    border-radius: 8px; /* Bordes redondeados */
+  }
+  
+  /* Estilos para la lista de navegación */
+  nav ul {
+    list-style-type: none; /* Eliminar puntos de la lista */
+    margin: 0; /* Eliminar márgenes */
+    padding: 0; /* Eliminar relleno */
+    display: flex; /* Usar flexbox para alinear horizontalmente */
+    justify-content: space-between; /* Espaciado uniforme entre elementos */
+  }
+  
+  /* Estilos para los elementos de la lista */
+  nav li {
+    margin: 0 15px; /* Espaciado entre los elementos de la lista */
+  }
+  
+  /* Estilos para los enlaces */
+  nav a {
+    color: #ffffff; /* Color del texto en blanco */
+    text-decoration: none; /* Eliminar subrayado */
+    font-size: 18px; /* Tamaño de fuente */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave */
+  }
+  
+  /* Efecto hover para los enlaces */
+  nav a:hover {
+    background-color: #3a3a3a; /* Color de fondo al pasar el mouse */
+    color: #ffffff; /* Asegurarse de que el texto siga siendo blanco */
+  }
+  
+  /* Estilo activo para el enlace actual */
+  nav a.active {
+    background-color: #575757; /* Color de fondo para el enlace activo */
+    color: #ffffff; /* Color del texto activo */
+  }
+  
+  
 
 /* Estilo del icono de menú hamburguesa */
 .burger-icon {
@@ -81,6 +140,7 @@ nav li:hover::after {
     cursor: pointer; /* Cambiar cursor al pasar sobre el icono */
     color: #1e88e5; /* Color del icono */
     margin-right: 10px; /* Espacio entre el icono y el logo */
+    transition: color 0.3s; /* Transición suave para el color */
 }
 
 /* Estilos de la sección del video */
