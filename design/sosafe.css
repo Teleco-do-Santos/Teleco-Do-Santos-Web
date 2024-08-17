@@ -38,7 +38,7 @@ header {
   position: relative; /* Para el icono de hamburguesa */
 }
 
-/* Estilo del logo */
+ 
 .logo {
   font-size: 24px;
   font-weight: bold;
@@ -47,7 +47,7 @@ header {
   text-align: center; /* Centrar el texto del logo */
   text-decoration: none; /* Eliminar subrayado */
 }
-
+  
 /* Estilo del icono de menú hamburguesa */
 .burger-icon {
   display: none; /* Oculto por defecto */
@@ -57,36 +57,116 @@ header {
   margin-right: 10px; /* Espacio entre el icono y el logo */
 }
 
-/* Estilos de la navegación */
-nav {
-  display: flex; /* Mostrar la navegación en dispositivos grandes */
-}
-
-nav ul {
+//* Estilos para el encabezado */
+header {
   display: flex;
-  align-items: center; /* Alinear verticalmente los elementos */
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
 }
 
+
+/* Estilos para el logo */
+.logo {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Estilos de la navegación */
+body {
+  background-color: #121212; /* Fondo oscuro */
+  color: #e0e0e0; /* Color del texto claro */
+  font-family: Arial, sans-serif; /* Fuente general */
+}
+
+/* Estilos para el menú de navegación */
+nav {
+  display: flex;
+  align-items: center;
+}
+
+/* Estilos para la lista de navegación */
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+/* Estilos para los elementos de la lista */
 nav li {
-  margin-left: 20px; /* Espacio entre los elementos de navegación */
-  position: relative; /* Para el efecto de subrayado */
+  margin-left: 20px;
 }
 
-nav li::after {
-  content: ''; /* Crea un pseudo-elemento */
-  display: block;
-  height: 2px; /* Grosor del subrayado */
-  background: #1e88e5; /* Color del subrayado */
-  width: 0; /* Ancho inicial */
-  transition: width 0.3s; /* Transición suave */
-  position: absolute;
-  left: 0;
-  bottom: -5px; /* Espaciado del subrayado */
+/* Estilos para los enlaces */
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-nav li:hover::after {
-  width: 100%; /* Expande el subrayado al pasar el ratón */
+/* Efecto hover para los enlaces */
+nav a:hover {
+  background-color: #3a3a3a;
+  color: #ffffff;
 }
+
+/* Estilos generales para el cuerpo */
+body {
+    background-color: #121212; /* Fondo oscuro */
+    color: #e0e0e0; /* Color del texto claro */
+    font-family: 'Roboto', sans-serif; /* Fuente general similar a la de Google */
+  }
+  
+  /* Estilos para el menú de navegación */
+  nav {
+    background-color: #1f1f1f; /* Fondo del menú */
+    padding: 15px 30px; /* Espaciado interno */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra para profundidad */
+    border-radius: 8px; /* Bordes redondeados */
+  }
+  
+  /* Estilos para la lista de navegación */
+  nav ul {
+    list-style-type: none; /* Eliminar puntos de la lista */
+    margin: 0; /* Eliminar márgenes */
+    padding: 0; /* Eliminar relleno */
+    display: flex; /* Usar flexbox para alinear horizontalmente */
+    justify-content: space-between; /* Espaciado uniforme entre elementos */
+  }
+  
+  /* Estilos para los elementos de la lista */
+  nav li {
+    margin: 0 15px; /* Espaciado entre los elementos de la lista */
+  }
+  
+  /* Estilos para los enlaces */
+  nav a {
+    color: #ffffff; /* Color del texto en blanco */
+    text-decoration: none; /* Eliminar subrayado */
+    font-size: 18px; /* Tamaño de fuente */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave */
+  }
+  
+  /* Efecto hover para los enlaces */
+  nav a:hover {
+    background-color: #3a3a3a; /* Color de fondo al pasar el mouse */
+    color: #ffffff; /* Asegurarse de que el texto siga siendo blanco */
+  }
+  
+  /* Estilo activo para el enlace actual */
+  nav a.active {
+    background-color: #575757; /* Color de fondo para el enlace activo */
+    color: #ffffff; /* Color del texto activo */
+  }
 
 /* Estilos de la sección del video */
 .video-container {
@@ -289,5 +369,91 @@ footer p {
 
   nav {
     display: flex; /* Mostrar la navegación en dispositivos grandes */
+  }
+}
+
+header {
+  justify-content: space-between; /* Alinear el logo a la izquierda y el menú a la derecha */
+  padding: 15px 30px; /* Aumentar el espaciado interno */
+}
+
+.logo {
+  text-align: left; /* Alinear el texto del logo a la izquierda */
+  margin-left: 0; /* Eliminar margen izquierdo */
+}
+
+nav {
+  display: flex; /* Mostrar la navegación en dispositivos grandes */
+  align-items: center; /* Centrar verticalmente los elementos del menú */
+}
+
+nav ul {
+  display: flex; /* Mostrar la lista de navegación horizontalmente */
+  justify-content: flex-end; /* Alinear el menú a la derecha */
+}
+
+nav li {
+  margin-left: 20px; /* Espaciado entre los elementos del menú */
+}
+
+nav a {
+  display: inline; /* Mostrar los enlaces en línea */
+  text-align: left; /* Alinear el texto de los enlaces a la izquierda */
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+ /* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+  /* Estilos para el encabezado en móvil */
+  header {
+    flex-direction: row ; /* Cambiar a fila */
+    align-items: center; /* Centrar horizontalmente */
+    padding: 15px; /* Espaciado interno */
+  }
+
+  /* Estilos para el logo en móvil */
+  .logo {
+    margin-left: 10px; /* Espacio entre el icono de hamburguesa y el logo */
+    text-align: center; /* Centrar el texto del logo */
+    width: auto; /* Permitir que el logo ocupe solo el espacio necesario */
+  }
+
+  /* Estilos para el icono de hamburguesa */
+  .burger-icon {
+    display: block; /* Mostrar el icono de hamburguesa */
+    font-size: 30px; /* Tamaño del icono */
+    cursor: pointer; /* Cambiar cursor al pasar sobre el icono */
+    color: #ffffff; /* Color blanco para el icono */
+  }
+
+  /* Estilos para la barra de navegación */
+  nav {
+    display: none; /* Ocultar la navegación por defecto */
+    flex-direction: column; /* Cambiar a dirección vertical */
+    width: 100%; /* Ancho completo */
+    background-color: #1f1f1f; /* Fondo oscuro para el menú */
+    position: absolute; /* Posicionar el menú */
+    top: 60px; /* Alinear debajo del header */
+    left: 0;
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+    z-index: 1000; /* Asegurarse de que esté por encima de otros elementos */
+  }
+
+  /* Mostrar la navegación cuando se activa el icono de hamburguesa */
+  nav.show {
+    display: flex; /* Mostrar la navegación */
+  }
+
+  nav li {
+    margin: 10px 0; /* Espaciado vertical entre elementos */
+    padding: 10px; /* Espaciado interno para los enlaces */
+    text-align: center; /* Centrar texto en los enlaces */
+  }
+
+  nav a {
+    display: block; /* Hacer que los enlaces ocupen todo el ancho */
+    text-align: center; /* Centrar el texto del enlace */
   }
 }
