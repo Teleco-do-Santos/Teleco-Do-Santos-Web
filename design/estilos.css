@@ -315,7 +315,12 @@ footer p {
     flex-direction: column; /* Cambia a columna en dispositivos más pequeños */
     align-items: center; /* Centra las tarjetas en la fila */
 }
-
+.logo {
+  font-size: 24px; /* Tamaño del logo */
+  text-align: center; /* Centrar el texto del logo */
+  margin: 0 50px; /* Espacio a los lados del logo */
+  color: #ffffff; /* Color blanco para el logo */
+}
 .burger-icon {
   display: block; /* Mostrar el icono hamburguesa en móviles */
   color: #ffffff;
@@ -337,6 +342,7 @@ footer p {
 
 nav {
   display: none; /* Ocultar la navegación por defecto en móviles */
+  text-align: center;
   flex-direction: column; /* Cambiar a dirección vertical */
   width: 100%; /* Ancho completo */
   background-color: #1f1f1f; /* Fondo oscuro para el menú */
@@ -366,7 +372,15 @@ nav li {
 nav a:hover {
 color: #007bff; /* Blue color for hover effect */
 }
-}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -375,7 +389,7 @@ color: #007bff; /* Blue color for hover effect */
     max-width: 300px; /* Ancho máximo para mantener la estética */
     box-shadow: 0 8px 16px rgba(255, 240, 36, 0.671); /* Sombra más intensa */
 }
-}
+
 .texto-bloque {
   width: 100%; /* Abarca todo el ancho en dispositivos más pequeños */
   margin: 6px ; /* Espaciado vertical */
@@ -389,4 +403,6 @@ font-size: 26px; /* Ajusta el tamaño de la fuente */
 font-weight: bold; /* Ajusta el peso de la fuente */
 text-align: left; /* Ajusta la alineación del texto */
 color: #ffffff; /* Ajusta el color del texto */
+}
+
 }
