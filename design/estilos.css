@@ -7,18 +7,30 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #121212;
-  color: #ffffff;
+  background-color: #121212; /* Fondo oscuro para todo el cuerpo */
+  color: #ffffff; /* Color de texto blanco */
   line-height: 1.6;
+  padding: 20px;
+}
+
+body {
+  background-image: url('foto\ backgrund/901.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 a {
-  color: #1e88e5;
+  color: #1e88e5; /* Color de enlaces */
   text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: underline; /* Subrayado al pasar el ratón */
 }
 
 ul {
@@ -27,26 +39,79 @@ ul {
 
 /* Estilos del header */
 header {
-  background-color: #1f1f1f;
-  padding: 20px;
+  background-color: #1f1f1f; /* Fondo oscuro para el header */
+  padding: 10px 20px; /* Espaciado superior e inferior reducido */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Sombra más sutil */
+  border-radius: 8px; /* Bordes redondeados */
 }
 
 .logo {
   font-size: 24px;
   font-weight: bold;
+  color: #ffffff; /* Color blanco para el logo */
+
+
 }
 
+/* Estilos para el menú de navegación */
+nav {
+  background-color: #1f1f1f; /* Fondo del menú */
+  padding: 15px 20px; /* Espaciado interno */
+  box-shadow: 0 2px 10px rgba(135, 91, 255, 0.719); /* Sombra para profundidad */
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Estilos para la lista de navegación */
 nav ul {
-  display: flex;
+  list-style-type: none; /* Eliminar puntos de la lista */
+  margin: 0; /* Eliminar márgenes */
+  padding: 0; /* Eliminar relleno */
+  display: flex; /* Usar flexbox para alinear horizontalmente */
+  justify-content: space-between; /* Espaciado uniforme entre elementos */
 }
 
+/* Estilos para los elementos de la lista */
 nav li {
-  margin-left: 20px;
+  margin: 0 15px; /* Espaciado entre los elementos de la lista */
 }
+
+/* Estilos para los enlaces */
+nav a {
+  color: #ffffff; /* Color del texto en blanco */
+  text-decoration: none; /* Eliminar subrayado */
+  font-size: 18px; /* Tamaño de fuente */
+  padding: 10px 20px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s, color 0.3s; /* Transición suave */
+}
+
+/* Efecto hover para los enlaces */
+nav a:hover {
+  background-color: #3a3a3a; /* Color de fondo al pasar el mouse */
+  color: #ffffff; /* Asegurarse de que el texto siga siendo blanco */
+}
+
+/* Estilo activo para el enlace actual */
+nav a.active {
+  background-color: #575757; /* Color de fondo para el enlace activo */
+  color: #ffffff; /* Color del texto activo */
+}
+
+
+/* Estilo del icono de menú hamburguesa */
+.burger-icon {
+  display: none; /* Oculto por defecto */
+  font-size: 30px; /* Tamaño del icono */
+  cursor: pointer; /* Cambiar cursor al pasar sobre el icono */
+  color: #1e88e5; /* Color del icono */
+  margin-right: 10px; /* Espacio entre el icono y el logo */
+  transition: color 0.3s; /* Transición suave para el color */
+}
+
+
 
 /* Estilos de la sección de la imagen */
 .imagen-container {
@@ -79,30 +144,29 @@ css
 .subtitulo:hover {
     color: #4285f4; /* Cambia el color al pasar el mouse */
 }
-
 .grupo-roles {
   display: flex;
   flex-wrap: wrap; /* Permite que las tarjetas se ajusten en múltiples filas */
   justify-content: center; /* Centra las tarjetas en la fila */
-  margin: 20px 0; /* Espacio superior e inferior */
-  padding: 10px; /* Añade un poco de espacio alrededor del contenedor */
+  margin: 40px 0; /* Espacio superior e inferior */
+  padding: 20px; /* Añade un poco de espacio alrededor del contenedor */
 }
 
 .card {
-  background-color: #1e1e1e; /* Color de fondo gris oscuro para el tema dark */
+  background-color: #0808086c; /* Color de fondo blanco para un diseño limpio */
   border-radius: 12px; /* Bordes redondeados para un diseño moderno */
   padding: 20px; /* Espacio interno */
-  margin: 15px; /* Espacio entre tarjetas */
+  margin: 20px; /* Espacio entre tarjetas */
   text-align: center; /* Centra el texto */
   width: 280px; /* Ancho uniforme para todas las tarjetas */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra suave para dar profundidad */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra más intensa para dar profundidad */
   transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves para efectos hover */
   overflow: hidden; /* Para evitar que el contenido se desborde */
 }
 
 .card:hover {
   transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); /* Sombra más intensa al hacer hover */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); /* Sombra más intensa al hacer hover */
 }
 
 .card img {
@@ -118,16 +182,35 @@ css
 }
 
 .card h5 {
-  font-size: 18px; /* Tamaño de fuente para el nombre */
+  font-size: 20px; /* Tamaño de fuente para el nombre */
   color: #4285f4; /* Color azul de Google para el nombre */
-  margin-bottom: 5px; /* Espacio inferior */
+  margin-bottom: 10px; /* Espacio inferior */
 }
 
 .card p {
   margin-top: 10px; /* Espacio entre la imagen y el texto */
   font-size: 16px; /* Tamaño de fuente para los nombres */
-  color: #e0e0e0; /* Color del texto gris claro para mejor legibilidad en tema dark */
-  font-weight: 500; /* Peso de fuente semi-negrita */
+  color: #ffffffc7; /* Color del texto gris oscuro para mejor legibilidad */
+  font-weight: 400; /* Peso de fuente normal */
+}
+
+
+@media (min-width: 1200px) {
+  .grupo-roles {
+    justify-content: center;
+  }
+
+  .card:nth-child(6n+1),
+  .card:nth-child(6n+2),
+  .card:nth-child(6n+3) {
+    margin-right: 80px;
+  }
+
+  .card:nth-child(6n+4),
+  .card:nth-child(6n+5),
+  .card:nth-child(6n+6) {
+    margin-left: 80px;
+  }
 }
 /* Estilos de la sección de descripción de la imagen */
 .imagen-description {
@@ -174,6 +257,56 @@ footer p {
   font-size: 14px;
 }
 
+
+.imagen-container {
+  display: flex;
+  flex-direction: column; /* Alinea los elementos en columna */
+  align-items: center; /* Centra los elementos horizontalmente */
+  margin: 80px 0; /* Espaciado superior e inferior */
+}
+
+.imagen-container img {
+  width: 80%; /* Ancho de la imagen */
+  max-width: 800px; /* Ancho máximo */
+  height: auto; /* Altura automática para mantener la proporción */
+  border-radius: 12px; /* Bordes redondeados más pronunciados */
+  box-shadow: 0 8px 16px rgba(36, 255, 95, 0.671); /* Sombra más intensa */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+}
+
+.imagen-container img:hover {
+  transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); /* Sombra más intensa al hacer hover */
+}
+
+.imagen-description {
+  padding: 30px; /* Espaciado interno más generoso */
+
+  background-color: #000000ab; /* Fondo blanco para un diseño limpio */
+  border-radius: 12px; /* Bordes redondeados más pronunciados */
+  text-align: center; /* Centra el texto */
+  margin-top: 30px; /* Espacio entre la imagen y el texto */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.imagen-description h2 {
+  font-size: 28px; /* Tamaño de fuente más grande para el título */
+  color: #4285f4; /* Color azul de Google para el título */
+  margin-bottom: 15px; /* Espacio inferior */
+  font-weight: 600; /* Peso de fuente semi-negrita */
+}
+
+.imagen-description p {
+  font-size: 16px; /* Tamaño de fuente para el párrafo */
+  color: #ffffff; /* Color gris oscuro para mejor legibilidad */
+  max-width: 600px; /* Ancho máximo del párrafo */
+  margin: 0 auto; /* Centra el párrafo */
+  line-height: 1.6; /* Espaciado entre líneas */
+}
+
+
+
+
 /* Estilos responsivos */
 @media (max-width: 568px) {
 
@@ -183,16 +316,71 @@ footer p {
     align-items: center; /* Centra las tarjetas en la fila */
 }
 
+.burger-icon {
+  display: block; /* Mostrar el icono hamburguesa en móviles */
+  color: #ffffff;
+}
+
+.imagen-description {
+  padding: 30px 10px; /* Reduce el padding en móviles */
+}
+
+.imagen-description h2 {
+  font-size: 24px; /* Tamaño de fuente más pequeño en móviles */
+}
+
+.imagen-description p {
+  font-size: 14px; /* Tamaño de fuente más pequeño en móviles */
+}
+}
+
+
+nav {
+  display: none; /* Ocultar la navegación por defecto en móviles */
+  flex-direction: column; /* Cambiar a dirección vertical */
+  width: 100%; /* Ancho completo */
+  background-color: #1f1f1f; /* Fondo oscuro para el menú */
+  position: absolute; /* Posicionar el menú */
+  top: 90px; /* Alinear debajo del header */
+  left: 0;
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+  z-index: 1000; /* Asegurarse de que esté por encima de otros elementos */
+}
+
+nav.show {
+  display: flex; /* Mostrar la navegación cuando se activa */
+}
+
+nav ul {
+flex-direction: column; /* Stack links vertically */
+justify-content: flex-start;
+}
+nav li {
+  margin: 5px 0; /* Espaciado vertical entre elementos */
+  padding: 10px; /* Espaciado interno para los enlaces */
+  top: 20px; /* Ajusta el valor a tu gusto */
+  text-align: center; /* Centrar texto en los enlaces */
+}
+/* Hover effect for links */
+nav a:hover {
+color: #007bff; /* Blue color for hover effect */
+}
+}
+
+
+
 .card {
     width: 90%; /* Ancho reducido para pantallas más pequeñas */
     max-width: 300px; /* Ancho máximo para mantener la estética */
+    box-shadow: 0 8px 16px rgba(255, 240, 36, 0.671); /* Sombra más intensa */
 }
 }
 .texto-bloque {
   width: 100%; /* Abarca todo el ancho en dispositivos más pequeños */
   margin: 6px ; /* Espaciado vertical */
 }
-}
+
 
 .subtitulo {
 margin-top: 40px; /* Añade un margen superior de 30px */
@@ -202,4 +390,3 @@ font-weight: bold; /* Ajusta el peso de la fuente */
 text-align: left; /* Ajusta la alineación del texto */
 color: #ffffff; /* Ajusta el color del texto */
 }
-
