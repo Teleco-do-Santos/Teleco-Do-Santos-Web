@@ -1,0 +1,358 @@
+/* Estilos generales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #121212; /* Fondo oscuro para todo el cuerpo */
+  color: #ffffff; /* Color de texto blanco */
+  line-height: 1.6;
+  padding: 20px;
+}
+
+a {
+  color: #1e88e5; /* Color de enlaces */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* Estilos del header */
+header {
+  background-color: #1f1f1f; /* Fondo oscuro para el header */
+  padding: 10px 20px; /* Espaciado superior e inferior reducido */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Sombra más sutil */
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff; /* Color blanco para el logo */
+
+
+}
+
+/* Estilos para el menú de navegación */
+nav {
+  background-color: #1f1f1f; /* Fondo del menú */
+  padding: 15px 30px; /* Espaciado interno */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra para profundidad */
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Estilos para la lista de navegación */
+nav ul {
+  list-style-type: none; /* Eliminar puntos de la lista */
+  margin: 0; /* Eliminar márgenes */
+  padding: 0; /* Eliminar relleno */
+  display: flex; /* Usar flexbox para alinear horizontalmente */
+  justify-content: space-between; /* Espaciado uniforme entre elementos */
+}
+
+/* Estilos para los elementos de la lista */
+nav li {
+  margin: 0 15px; /* Espaciado entre los elementos de la lista */
+}
+
+/* Estilos para los enlaces */
+nav a {
+  color: #ffffff; /* Color del texto en blanco */
+  text-decoration: none; /* Eliminar subrayado */
+  font-size: 18px; /* Tamaño de fuente */
+  padding: 10px 20px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s, color 0.3s; /* Transición suave */
+}
+
+/* Efecto hover para los enlaces */
+nav a:hover {
+  background-color: #3a3a3a; /* Color de fondo al pasar el mouse */
+  color: #ffffff; /* Asegurarse de que el texto siga siendo blanco */
+}
+
+/* Estilo activo para el enlace actual */
+nav a.active {
+  background-color: #575757; /* Color de fondo para el enlace activo */
+  color: #ffffff; /* Color del texto activo */
+}
+
+
+/* Estilo del icono de menú hamburguesa */
+.burger-icon {
+  display: none; /* Oculto por defecto */
+  font-size: 30px; /* Tamaño del icono */
+  cursor: pointer; /* Cambiar cursor al pasar sobre el icono */
+  color: #1e88e5; /* Color del icono */
+  margin-right: 10px; /* Espacio entre el icono y el logo */
+  transition: color 0.3s; /* Transición suave para el color */
+}
+
+
+
+/* Estilo de la sección de descripción de video */
+.video-description {
+  background-color: #1f1f1f; /* Fondo gris oscuro para la descripción */
+  padding: 40px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Sombra suave */
+  margin: 20px auto; /* Centra el contenedor */
+  max-width: 800px; /* Ancho máximo para mantener la estética */
+}
+
+.video-description h2 {
+  font-size: 28px; /* Tamaño de fuente grande para el título */
+  color: #4285f4; /* Color azul de Google para el título */
+  margin-bottom: 20px; /* Espacio inferior */
+  text-align: center; /* Centra el título */
+}
+
+.video-description h3 {
+  font-size: 22px; /* Tamaño de fuente para subtítulos */
+  margin-top: 30px; /* Espacio superior */
+  margin-bottom: 10px; /* Espacio inferior */
+  color: #ffffff; /* Color blanco para los subtítulos */
+}
+
+.video-description p {
+  font-size: 16px; /* Tamaño de fuente estándar */
+  color: #e0e0e0; /* Color gris claro para el texto */
+  margin-bottom: 15px; /* Espacio inferior entre párrafos */
+}
+
+.video-description ul {
+  list-style-type: disc; /* Estilo de lista con puntos */
+  margin-left: 20px; /* Margen a la izquierda */
+  margin-bottom: 15px; /* Espacio inferior */
+}
+
+.video-description ol {
+  margin-left: 20px; /* Margen a la izquierda */
+  margin-bottom: 15px; /* Espacio inferior */
+}
+
+/* Estilo de los enlaces */
+a {
+  color: #1e88e5; /* Color de enlaces */
+  text-decoration: none; /* Sin subrayado */
+}
+
+/* Estilo de los enlaces */
+a {
+  color: #1e88e5; /* Color de enlaces */
+  text-decoration: none; /* Sin subrayado */
+}
+
+a:hover {
+  text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+
+  /* Estilos de la sección del video */
+  .video-container {
+    margin: 40px 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .video-container iframe {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Estilos de la sección de materiales */
+  .materials {
+    background-color: #424242;
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin: 20px;
+  }
+  
+  .materials h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .materials ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .materials li {
+    margin: 10px;
+    padding: 10px 15px;
+    background-color: #616161;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .materials li:hover {
+    background-color: #757575;
+  }
+  
+  /* Estilos de la sección de descripción del video */
+  .video-description {
+    padding: 40px 20px;
+  }
+  
+  .video-description h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .video-description p {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Estilos de la sección de últimas publicaciones */
+  .latest-posts {
+    background-color: #424242;
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin: 20px;
+  }
+  
+  .latest-posts h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .post-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .post-item {
+    width: 300px;
+    margin: 20px;
+    background-color: #616161;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  
+  .post-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .post-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .post-content {
+    padding: 20px;
+  }
+  
+  .post-content h3 {
+    margin-bottom: 10px;
+  }
+  
+  /* Estilos del footer */
+  footer {
+    background-color: #1f1f1f;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  footer p {
+    font-size: 14px;
+  }
+
+  /* Estilos responsivos */
+@media (max-width: 768px) {
+
+  .burger-icon {
+    display: block; /* Mostrar el icono hamburguesa en móviles */
+    color: #ffffff;
+}
+
+nav {
+    display: none; /* Ocultar la navegación por defecto en móviles */
+    flex-direction: column; /* Cambiar a dirección vertical */
+    width: 100%; /* Ancho completo */
+    background-color: #1f1f1f; /* Fondo oscuro para el menú */
+    position: absolute; /* Posicionar el menú */
+    top: 90px; /* Alinear debajo del header */
+    left: 0;
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+    z-index: 1000; /* Asegurarse de que esté por encima de otros elementos */
+}
+
+nav.show {
+    display: flex; /* Mostrar la navegación cuando se activa */
+}
+
+nav ul {
+  flex-direction: column; /* Stack links vertically */
+  justify-content: flex-start;
+}
+nav li {
+    margin: 5px 0; /* Espaciado vertical entre elementos */
+    padding: 10px; /* Espaciado interno para los enlaces */
+    top: 20px; /* Ajusta el valor a tu gusto */
+    text-align: center; /* Centrar texto en los enlaces */
+}
+/* Hover effect for links */
+nav a:hover {
+  color: #007bff; /* Blue color for hover effect */
+}
+
+
+
+
+/* Estilos para dispositivos de escritorio */
+@media (min-width: 769px) {
+  .burger-icon {
+      display: none; /* Ocultar el icono hamburguesa en escritorio */
+  }
+
+  nav {
+      display: flex; /* Mostrar la navegación en dispositivos grandes */
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    display: block;
+    margin: 0 auto;
+    }
+
+    .video-description {
+      padding: 20px; /* Espaciado interno reducido en móviles */
+  }
+
+  .video-description h2 {
+      font-size: 24px; /* Tamaño de fuente más pequeño en móviles */
+  }
+
+  .video-description h3 {
+      font-size: 20px; /* Tamaño de fuente más pequeño para subtítulos en móviles */
+  }
+
+  .video-description p {
+      font-size: 14px; /* Tamaño de fuente más pequeño en móviles */
+  }
+}
+}
