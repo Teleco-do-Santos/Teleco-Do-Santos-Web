@@ -159,7 +159,7 @@ css
   margin: 20px; /* Espacio entre tarjetas */
   text-align: center; /* Centra el texto */
   width: 280px; /* Ancho uniforme para todas las tarjetas */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra más intensa para dar profundidad */
+  box-shadow: 0 8px 16px rgba(255, 240, 36, 0.671); /* Sombra más intensa */
   transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves para efectos hover */
   overflow: hidden; /* Para evitar que el contenido se desborde */
 }
@@ -372,6 +372,17 @@ nav li {
 nav a:hover {
 color: #007bff; /* Blue color for hover effect */
 }
+
+
+
+
+
+
+
+
+
+
+
 
 .card {
     width: 90%; /* Ancho reducido para pantallas más pequeñas */
