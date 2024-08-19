@@ -63,7 +63,72 @@ nav li {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
+css
+.subtitulo {
+    margin-top: 40px; /* Espacio superior */
+    margin-bottom: 20px; /* Espacio inferior */
+    font-size: 28px; /* Tamaño de fuente más grande */
+    font-weight: 600; /* Peso de fuente semi-negrita */
+    text-align: left; /* Alineación a la izquierda */
+    color: #202124; /* Color oscuro para un buen contraste */
+    border-bottom: 2px solid #4285f4; /* Línea inferior azul */
+    padding-bottom: 10px; /* Espacio entre el texto y la línea */
+    transition: color 0.3s ease; /* Transición suave para el color */
+}
 
+.subtitulo:hover {
+    color: #4285f4; /* Cambia el color al pasar el mouse */
+}
+
+.grupo-roles {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las tarjetas se ajusten en múltiples filas */
+  justify-content: center; /* Centra las tarjetas en la fila */
+  margin: 20px 0; /* Espacio superior e inferior */
+  padding: 10px; /* Añade un poco de espacio alrededor del contenedor */
+}
+
+.card {
+  background-color: #1e1e1e; /* Color de fondo gris oscuro para el tema dark */
+  border-radius: 12px; /* Bordes redondeados para un diseño moderno */
+  padding: 20px; /* Espacio interno */
+  margin: 15px; /* Espacio entre tarjetas */
+  text-align: center; /* Centra el texto */
+  width: 280px; /* Ancho uniforme para todas las tarjetas */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra suave para dar profundidad */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves para efectos hover */
+  overflow: hidden; /* Para evitar que el contenido se desborde */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); /* Sombra más intensa al hacer hover */
+}
+
+.card img {
+  width: 100%; /* La imagen ocupa todo el ancho de la tarjeta */
+  height: 200px; /* Altura fija para las imágenes */
+  object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+  border-radius: 10px; /* Bordes ligeramente redondeados para las imágenes */
+  transition: transform 0.3s; /* Transición suave para el efecto hover en imágenes */
+}
+
+.card img:hover {
+  transform: scale(1.05); /* Efecto de zoom al pasar el mouse sobre la imagen */
+}
+
+.card h5 {
+  font-size: 18px; /* Tamaño de fuente para el nombre */
+  color: #4285f4; /* Color azul de Google para el nombre */
+  margin-bottom: 5px; /* Espacio inferior */
+}
+
+.card p {
+  margin-top: 10px; /* Espacio entre la imagen y el texto */
+  font-size: 16px; /* Tamaño de fuente para los nombres */
+  color: #e0e0e0; /* Color del texto gris claro para mejor legibilidad en tema dark */
+  font-weight: 500; /* Peso de fuente semi-negrita */
+}
 /* Estilos de la sección de descripción de la imagen */
 .imagen-description {
   padding: 50px 20px;
@@ -111,8 +176,30 @@ footer p {
 
 /* Estilos responsivos */
 @media (max-width: 568px) {
-  .texto-bloque {
-    width: 80%; /* Abarca todo el ancho en dispositivos más pequeños */
-    margin: 10px 0; /* Espaciado vertical */
-  }
+
+@media (max-width: 768px) {
+  .grupo-roles {
+    flex-direction: column; /* Cambia a columna en dispositivos más pequeños */
+    align-items: center; /* Centra las tarjetas en la fila */
 }
+
+.card {
+    width: 90%; /* Ancho reducido para pantallas más pequeñas */
+    max-width: 300px; /* Ancho máximo para mantener la estética */
+}
+}
+.texto-bloque {
+  width: 100%; /* Abarca todo el ancho en dispositivos más pequeños */
+  margin: 6px ; /* Espaciado vertical */
+}
+}
+
+.subtitulo {
+margin-top: 40px; /* Añade un margen superior de 30px */
+margin-bottom: 20px; /* Añade un margen inferior de 10px */
+font-size: 26px; /* Ajusta el tamaño de la fuente */
+font-weight: bold; /* Ajusta el peso de la fuente */
+text-align: left; /* Ajusta la alineación del texto */
+color: #ffffff; /* Ajusta el color del texto */
+}
+
