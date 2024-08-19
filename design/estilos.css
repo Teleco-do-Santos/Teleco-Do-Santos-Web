@@ -373,17 +373,6 @@ nav a:hover {
 color: #007bff; /* Blue color for hover effect */
 }
 
-
-
-
-
-
-
-
-
-
-
-
 .card {
     width: 90%; /* Ancho reducido para pantallas más pequeñas */
     max-width: 300px; /* Ancho máximo para mantener la estética */
