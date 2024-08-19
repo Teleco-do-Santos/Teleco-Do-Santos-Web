@@ -8,30 +8,35 @@
 </head>
 <body>
   <header>
-    <a href="index.html" class="logo" style="color: rgb(49, 241, 49);">Teleco do Santos</a>
+    
+    <span class="burger-icon" onclick="toggleMenu()">&#9776;</span>
+    <a href="index.html" class="logo">Teleco do Santos</a>
     <nav>
       <ul>
         <li><a href="index.html">Inicio</a></li>
-        
         <li><a href="contacto.html">Contacto</a></li>
         <li><a href="blogs.html">Publicaciones</a></li>
       </ul>
     </nav>
   </header>
 
+
   <main>
-    <section class="imagen-container">
-      <img src="src/eKUIPO.webp" alt="Imagen de ejemplo">
-    </section>
-
-    <section class="texto-bloque">
-      <h2 class="subtitulo">¿Quienes somos?</h2>
-      <p>Como ustedes ya habrán notado en nuestro stand o en la página principal de nuestra web, "Teleco do Santos" es un grupo de cuarto medio de la especialidad de telecomunicaciones para el evento conocido como "Feria TP". Este equipo es el encargado del proyecto "Security Tech", un servicio con el propósito de enseñar de manera activa sobre las tecnologías de seguridad más conocidas del último tiempo.
-
-        Somos un equipo de trabajo que toma como nombre "Teleco do Santos", conformado por estudiantes de 4to Medio del colegio Cardenal Raúl Silva Henríquez, pertenecientes a la especialidad de telecomunicaciones, que se enfrentan a la Feria Técnico Profesional, la cual nos desafía como estudiantes y futuros técnicos. Este equipo es el responsable del proyecto "Teleco te enseña", un servicio con el propósito de enseñar y orientar de manera activa sobre las tecnologías de seguridad más conocidas del último tiempo, con el fin de mejorar el nivel de seguridad de las personas respecto a su entorno.
-
-</p>
-
+    <div class="imagen-container">
+      <img src="src/Logo Astrologia Tarot Minimalista Blanco y Negro (1).png" alt="Descripción de la imagen">
+      <div class="imagen-description">
+        <h2>¿Quiénes somos?</h2>
+        <p>
+            Somos "Teleco do Santos", un grupo de estudiantes de cuarto medio de la especialidad de telecomunicaciones del colegio Cardenal Raúl Silva Henríquez. Nos enfrentamos al desafío de la Feria Técnico Profesional (FTP) con un proyecto llamado "Security Tech".
+        </p>
+        <p>
+            Nuestro objetivo es enseñar de manera activa sobre las tecnologías de seguridad más conocidas del último tiempo, con el fin de mejorar el nivel de seguridad de las personas respecto a su entorno. Nos hemos propuesto dar a conocer estas herramientas de una manera accesible y comprensible para todos nuestros invitados, independientemente de su nivel de conocimiento tecnológico.
+        </p>
+        <p>
+            Trabajamos juntos para desarrollar "Teleco te enseña", un servicio que brinda orientación y conocimientos sobre las últimas tendencias en seguridad. Estamos emocionados de compartir nuestras ideas y aprendizajes con la comunidad durante la FTP.
+        </p>
+      </div>
+  </div>
 <h2 class="subtitulo">Grupo y roles</h2>
 
 <div class="grupo-roles">
@@ -60,13 +65,13 @@
         <p>Vicente Morales - Documentación</p>
     </div>
 </div>
-
-  <h2 class="subtitulo">Feria TP e Inspiracion</h2>
+<div class="imagen-description">
+  <h2>Feria TP e Inspiracion</h2>
   <p>La FTP es un evento que se desarrolla año tras año, donde los estudiantes de las especialidades técnicas de nuestro colegio, tanto en el área de Telecomunicaciones como en Gastronomía, viven la experiencia del primer vínculo con su posible futuro laboral. Algunos se adentran en este mundo, y esto se lleva a cabo teniendo como eje principal el desarrollo de un proyecto que debe cumplir con ciertos criterios. 
     </p>
     <p>En la primera instancia de este evento se nos presenta una problemática. A partir de esta, nosotros debemos concretar el proyecto. La temática de este año es la seguridad en el área local, ya que, como sabemos, últimamente hay mucha inseguridad en nuestras comunas y pocas herramientas para defendernos. En el proceso, antes de elegir nuestro proyecto, tuvimos una lluvia de ideas donde todas las propuestas tenían algo en común: un usuario. Sin embargo, siempre había un problema dentro de esas ideas: ¿qué pasa si el usuario no sabe nada de tecnologías? Entonces decidimos, como grupo, ser nosotros quienes diéramos esas herramientas, proporcionando conocimientos sobre tecnologías de seguridad accesibles para nuestros invitados. </p>
     </section>
-
+  </div>
     <section class="imagen-description">
    
     </section>
@@ -74,5 +79,12 @@
   <footer>
     <p>&copy; 2024 Teleco Do Santos. Todos los derechos reservados.</p>
   </footer>
+  <script>
+    function toggleMenu() {
+      var nav = document.querySelector('nav');
+      nav.classList.toggle('show');
+    }
+  </script>
+
 </body>
 </html>
