@@ -124,18 +124,19 @@ header {
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 3px;
-  background: linear-gradient(45deg, #4285f4, #34a853, #fbbc05, #ea4335);
+  background: linear-gradient(to right, #009c3b, #ffdf00, #002776);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   margin-bottom: 30px;
   margin-top: -340px;
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+  text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.3);
   line-height: 1.2;
   padding: 10px;
   border-radius: 10px;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
+  font-family: 'Pacifico', cursive;
 }
 
 .hero-content p {
