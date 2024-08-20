@@ -82,71 +82,122 @@ header {
 
 /* Hero Styles */
 .contenedor-principal {
-  background-image: url("foto\ backgrund/901.png");
-  background-size: cover; /* Cambia a cover para que la imagen cubra todo el contenedor */
+  background-image: url("foto\ backgrund/fondo.png");
+  background-size: cover;
   background-position: center;
-  height: 100vh; /* Ajusta la altura */
+  background-attachment: fixed;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative; /* Para el contenido absoluto */
-  width: 100vw;
+  position: relative;
+  width: 100%;
+  padding: 80px 20px;
+  overflow: hidden;
 }
 
 .hero {
-  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1em;
-  color: #fff;
-  text-align: center;
+  min-height: calc(100vh - 80px);
+  position: relative;
 }
 
 .hero-content {
-  position: absolute;
-  top: 50%; /* Centra verticalmente */
-  left: 50%; /* Centra horizontalmente */
-  transform: translate(-50%, -50%); /* Ajusta la posición para centrar */
+  position: relative;
+  z-index: 2;
+  padding: 60px;
+  max-width: 800px;
+  width: 100%;
   text-align: center;
-  z-index: 2; /* Asegura que el contenido esté por encima de la imagen */
-  padding: 20px; /* Añade un poco de padding */
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para mejorar la legibilidad */
-  border-radius: 10px; /* Bordes redondeados */
+  margin-top: 80px;
+  animation: fadeInUp 0.8s ease-out;
 }
 
 .hero-content h1 {
-  font-size: 48px; /* Tamaño de letra del título */
-  margin-bottom: 0.5em; /* Espacio inferior */
+  font-size: 4.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  background: linear-gradient(45deg, #4285f4, #34a853, #fbbc05, #ea4335);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 30px;
+  margin-top: -340px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+  line-height: 1.2;
+  padding: 10px;
+  border-radius: 10px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 .hero-content p {
-  font-size: 24px; /* Tamaño de letra del párrafo */
-  margin-bottom: 1em; /* Espacio inferior */
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: #f0f0f0;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Sombra de texto sutil */
 }
 
 .buttons {
   display: flex;
   justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
 }
 
 .btn {
-  background-color: #4285f4; /* Color azul de Google */
+  background-color: rgba(255, 255, 255, 0.1);
   color: #fff;
-  border: none;
-  padding: 12px 24px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 14px 32px;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-  margin: 0 10px; /* Espacio entre botones */
-  border-radius: 24px; /* Borde redondeado */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra */
+  transition: all 0.3s ease;
+  border-radius: 50px;
+  backdrop-filter: blur(5px);
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: all 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
 }
 
 .btn:hover {
-  background-color: #357ae8; /* Color más oscuro al pasar el cursor */
-  transform: translateY(-2px); /* Efecto de elevación */
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-github {
+  margin-left: 75px; /* Ajusta este valor según necesites */
 }
 
 /* Additional Content Styles */
@@ -185,7 +236,7 @@ header {
   flex-direction: column; /* Mantiene la estructura vertical para el título */
   align-items: center;
   padding: 2em;
-  background-color: #333;
+  background-color: #1e1e1e; /* Fondo más oscuro */
   color: #fff;
   text-align: center;
 }
@@ -193,7 +244,7 @@ header {
 .blog-posts {
   display: flex;
   justify-content: center; /* Centra los elementos en la fila */
-  align-items: flex-start; /* Alinea los elementos al inicio */
+  align-items: stretch; /* Alinea los elementos al inicio */
   width: 100%; /* Asegura que ocupe todo el ancho disponible */
   flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples filas si es necesario */
 }
@@ -202,52 +253,113 @@ header {
   flex: 1 1 300px; /* Permite que cada blog ocupe el mismo espacio, con un ancho mínimo de 300px */
   margin: 20px; /* Espacio entre los blogs */
   max-width: 300px; /* Establece un ancho máximo para los blogs */
-  background-color: #444;
+  background-color: #2d2d2d; /* Fondo más claro que el contenedor principal */
   padding: 20px;
-  border-radius: 19px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-decoration: none; /* Elimina el subrayado del enlace */
   color: inherit; /* Mantiene el color del texto heredado */
-  transition: transform 0.2s ease; /* Añade una transición suave al efecto hover */
+  transition: all 0.3s ease; /* Añade una transición suave al efecto hover */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .blog-post:hover {
-  transform: scale(1.05); /* Efecto de aumento al pasar el cursor */
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .blog-post img {
   width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
   height: 200px; /* Establece una altura fija para todas las imágenes */
   object-fit: cover; /* Mantiene la proporción de la imagen y recorta si es necesario */
-  border-radius: 10px; /* Bordes redondeados */
+  border-radius: 8px; /* Bordes redondeados */
+  margin-bottom: 15px;
 }
 
 .leer-mas {
-  background-color: #4285f4; /* Color azul de Google */
-  color: #fff; /* Texto blanco */
-  border: none; /* Sin borde */
-  padding: 10px 20px; /* Espaciado interno */
-  font-size: 16px; /* Tamaño de fuente */
-  cursor: pointer; /* Cambia el cursor al pasar el mouse */
-  border-radius: 4px; /* Bordes redondeados */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
-  display: inline-flex; /* Para centrar el texto */
-  align-items: center; /* Alinea verticalmente */
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-top: 15px;
+  align-self: center;
 }
 
 .leer-mas:hover {
-  background-color: #357ae8; /* Color más oscuro al pasar el cursor */
-  transform: translateY(-2px); /* Efecto de elevación */
-}
-
-.leer-mas:focus {
-  outline: none; /* Elimina el contorno por defecto */
-  box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.5); /* Sombra de enfoque */
+  background-color: #fff;
+  color: #1e1e1e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .contenedor-principal {
+    background-attachment: scroll;
+    padding: 0; /* Eliminamos el padding para aprovechar todo el espacio */
+    background-position: top center;
+  }
+
+  .hero {
+    min-height: 100vh; /* Ocupar toda la altura de la pantalla */
+    padding: 0; /* Eliminar padding */
+  }
+
+  .hero-content {
+    padding: 20px;
+    margin-top: 60px; /* Mantener espacio para la barra de navegación fija */
+    height: calc(100vh - 60px); /* Altura total menos el espacio de la barra de navegación */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrar verticalmente el contenido */
+    background-color: rgba(18, 18, 18, 0); /* Mantener el fondo semi-transparente */
+  }
+
+  .hero-content h1 {
+    font-size: 3.5rem;
+    margin-top: 0; /* Eliminar margen superior negativo */
+    padding: 15px;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 1.5em;
+    text-align: center;
+    max-width: 100%;
+    background-color: transparent; /* Eliminar fondo adicional en móviles */
+    padding: 0;
+    border-radius: 10px;
+  }
+
+  .buttons {
+    position: static;
+    bottom: auto;
+    margin-top: auto; /* Empujar los botones hacia abajo */
+    padding-bottom: 20px; /* Añadir espacio en la parte inferior */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .btn {
+    width: 80%;
+    margin: 10px 0;
+    min-width: 0;
+    padding: 12px 24px;
+    background-color: rgba(33, 33, 33, 0.9); /* Fondo oscuro más opaco para móviles */
+  }
+
   .left-content, .right-content {
     flex-direction: column; /* Cambia a columna en pantallas pequeñas */
     align-items: center;
@@ -275,6 +387,30 @@ header {
   }
 }
 
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 40px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 4rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
 /* Footer Styles */
 footer {
   background-color: #333;
@@ -286,4 +422,16 @@ footer {
 
 footer p {
   margin: 0;
+}
+
+/* Añadir animación de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
