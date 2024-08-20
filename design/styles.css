@@ -136,7 +136,7 @@ header {
   border-radius: 10px;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
-  font-family: 'Pacifico', cursive;
+  font-family: 'Montserrat', sans-serif; /* Cambiado de 'Pacifico' a 'Montserrat' */
 }
 
 .hero-content p {
