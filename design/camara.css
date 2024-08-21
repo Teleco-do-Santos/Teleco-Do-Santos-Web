@@ -104,43 +104,50 @@ nav a.active {
 
 /* Estilo de la sección de descripción de video */
 .video-description {
-  background-color: #1f1f1f; /* Fondo gris oscuro para la descripción */
-  padding: 40px; /* Espaciado interno */
-  border-radius: 10px; /* Bordes redondeados */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Sombra suave */
-  margin: 20px auto; /* Centra el contenedor */
-  max-width: 800px; /* Ancho máximo para mantener la estética */
+  background-color: #1f1f1f;
+  padding: 60px;
+  border-radius: 24px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
+  margin: 60px auto;
+  max-width: 1200px;
+  transition: all 0.3s ease;
 }
 
 .video-description h2 {
-  font-size: 28px; /* Tamaño de fuente grande para el título */
-  color: #4285f4; /* Color azul de Google para el título */
-  margin-bottom: 20px; /* Espacio inferior */
-  text-align: center; /* Centra el título */
+  font-size: 36px;
+  color: #ffffff;
+  margin-bottom: 32px;
+  text-align: left;
+  font-weight: 300;
+  letter-spacing: 0.5px;
 }
 
 .video-description h3 {
-  font-size: 22px; /* Tamaño de fuente para subtítulos */
-  margin-top: 30px; /* Espacio superior */
-  margin-bottom: 10px; /* Espacio inferior */
-  color: #ffffff; /* Color blanco para los subtítulos */
+  font-size: 28px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #4285f4;
+  font-weight: 500;
 }
 
 .video-description p {
-  font-size: 16px; /* Tamaño de fuente estándar */
-  color: #e0e0e0; /* Color gris claro para el texto */
-  margin-bottom: 15px; /* Espacio inferior entre párrafos */
+  font-size: 18px;
+  color: #e0e0e0;
+  margin-bottom: 24px;
+  line-height: 1.8;
+  max-width: 800px;
 }
 
-.video-description ul {
-  list-style-type: disc; /* Estilo de lista con puntos */
-  margin-left: 20px; /* Margen a la izquierda */
-  margin-bottom: 15px; /* Espacio inferior */
-}
-
+.video-description ul,
 .video-description ol {
-  margin-left: 20px; /* Margen a la izquierda */
-  margin-bottom: 15px; /* Espacio inferior */
+  margin-left: 28px;
+  margin-bottom: 24px;
+  max-width: 800px;
+}
+
+.video-description li {
+  margin-bottom: 16px;
+  color: #e0e0e0;
 }
 
 /* Estilo de los enlaces */
@@ -162,18 +169,50 @@ a:hover {
 
   /* Estilos de la sección del video */
   .video-container {
-    margin: 40px 0;
-    display: flex;
-    justify-content: center;
+    margin: 60px auto;
+    max-width: 90%;
+    background-color: #1e1e1e;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
   }
-  
+
+  .video-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  }
+
+  .video-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4285f4, #34a853, #fbbc05, #ea4335);
+  }
+
   .video-container iframe {
     width: 100%;
-    max-width: 800px;
-    height: 450px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    aspect-ratio: 16 / 9;
+    border: none;
+    display: block;
+    min-height: 600px;
   }
+
+  @media (max-width: 768px) {
+    .video-container {
+        max-width: 100%;
+        margin: 30px auto;
+        border-radius: 16px;
+    }
+
+    .video-container iframe {
+        min-height: auto;
+    }
+}
   
   /* Estilos de la sección de materiales */
   .materials {
@@ -340,19 +379,34 @@ nav a:hover {
     }
 
     .video-description {
-      padding: 20px; /* Espaciado interno reducido en móviles */
-  }
+      padding: 30px;
+      margin: 30px auto;
+      border-radius: 16px;
+    }
 
-  .video-description h2 {
-      font-size: 24px; /* Tamaño de fuente más pequeño en móviles */
-  }
+    .video-description h2 {
+      font-size: 28px;
+      margin-bottom: 24px;
+    }
 
-  .video-description h3 {
-      font-size: 20px; /* Tamaño de fuente más pequeño para subtítulos en móviles */
-  }
+    .video-description h3 {
+      font-size: 24px;
+      margin-top: 32px;
+      margin-bottom: 16px;
+    }
 
-  .video-description p {
-      font-size: 14px; /* Tamaño de fuente más pequeño en móviles */
-  }
+    .video-description p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .video-description ul,
+    .video-description ol {
+      margin-left: 24px;
+    }
+
+    .video-description li {
+      margin-bottom: 12px;
+    }
 }
 }
