@@ -148,17 +148,50 @@ nav a.active {
   
   /* Estilos de la sección de descripción del video */
   .video-description {
-    padding: 40px 20px;
+    padding: 60px 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+    font-family: 'Roboto', sans-serif;
+    color: #e0e0e0;
+    line-height: 1.8;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
   }
-  
+
+  .video-description:hover {
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+  }
+
   .video-description h2 {
-    text-align: center;
-    margin-bottom: 20px;
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #ffffff;
+    text-align: left;
+    font-weight: 300;
   }
-  
+
   .video-description p {
-    max-width: 800px;
-    margin: 0 auto;
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #b0b0b0;
+  }
+
+  /* Estilos responsivos para la sección video-description */
+  @media (max-width: 768px) {
+    .video-description {
+      padding: 40px 20px;
+      margin: 20px auto;
+    }
+
+    .video-description h2 {
+      font-size: 28px;
+    }
+
+    .video-description p {
+      font-size: 16px;
+    }
   }
   
   /* Estilos de la sección de últimas publicaciones */
@@ -289,17 +322,81 @@ nav a:hover {
   height: 100%; /* Alto completo */
 }
 .image-container {
-  margin-bottom: 20px; /* Espacio entre la imagen y el texto */
-  display: flex; /* Convertir en contenedor flexbox */
-  justify-content: center; /* Centrar imagen horizontalmente */
-  align-items: center; /* Centrar imagen verticalmente */
+  width: 100%;
+  height: 70vh;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0 0 20px 20px;
 }
 
 .image-container img {
-  max-width: 100%; /* Ancho máximo del 100% */
-  height: auto; /* Alto automático */
-  margin: 0 auto; /* Margen automático para centrar */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease-out;
+}
 
+.image-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+  z-index: 1;
+}
+
+.image-text {
+  position: absolute;
+  z-index: 2;
+  text-align: left;
+  color: #fff;
+  max-width: 800px;
+  width: 90%;
+  padding: 20px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.image-text h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.image-text p {
+  font-size: 1.4rem;
+  max-width: 600px;
+  margin: 0;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .image-container {
+    height: 50vh;
+  }
+
+  .image-text h1 {
+    font-size: 2rem;
+  }
+
+  .image-text p {
+    font-size: 1rem;
+  }
+}
+
+.image-container:hover img {
+  transform: scale(1.05);
 }
 
 .text-container {
@@ -308,15 +405,54 @@ nav a:hover {
   width: 80%; /* Ancho del 80% para dejar espacio en los lados */
 }
 
-.video-description {
-  padding: 40px 20px;
-  max-width: 800px;
-  margin: 0 auto;
-  font-family: 'Roboto', sans-serif;
-  color: #e0e0e0; /* Color de texto claro para mejor legibilidad */
-  line-height: 1.6;
-  background-color: #1f1f1f; /* Fondo oscuro */
-  border-radius: 12px; /* Bordes más redondeados */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Sombra más intensa */
-  transition: transform 0.3s; /* Transición suave para el efecto hover */
+.image-text-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.image-proyect {
+  flex: 1;
+  max-width: 50%;
+}
+
+.image-proyect img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.text-proyect {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .image-text-container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .image-proyect {
+    max-width: 100%;
+    margin-bottom: 2rem;
+    width: 90%; /* Aumentar el ancho al 90% del contenedor */
+    margin-left: auto; /* Centrar horizontalmente */
+    margin-right: auto;
+  }
+
+  .image-proyect img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Asegurar que la imagen cubra todo el espacio */
+  }
+
+  .image-proyect::before {
+    background: linear-gradient(45deg, rgba(66, 133, 244, 0.2), rgba(219, 68, 55, 0.2));
+  }
+
+  .image-proyect:hover {
+    transform: translateY(-5px) scale(1.01);
+  }
 }
