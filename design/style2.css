@@ -9,11 +9,14 @@ body {
 
 /* Estilos del encabezado */
 .header {
-  background-color: #1e1e1e;
-  padding: 10px;
-  display: flex;
-  align-items: center; /* Alineación vertical */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  background-color: rgba(18, 18, 18, 0.8);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  padding: 10px 0;
+  height: 60px; /* Altura fija para el header */
 }
 
 /* Centrar el título */
@@ -26,134 +29,225 @@ body {
 
 /* Estilos de la barra de navegación */
 .nav {
+  max-width: 1000px; /* Reducido de 1200px */
+  margin: 0 auto;
+  padding: 0 10px; /* Reducido de 20px */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%; /* Asegura que la barra de navegación ocupe todo el ancho */
+  height: 100%;
 }
 
 .nav-list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex; /* Flexbox para el menú */
+  display: flex;
+  align-items: center;
 }
 
 .nav-item {
-  margin-left: 20px; /* Espaciado entre elementos */
+  margin: 0 10px;
 }
 
 .nav-link {
-  color: #4285f4; /* Color azul para los enlaces */
-  text-decoration: none; /* Sin subrayado */
-  font-weight: bold; /* Negrita */
-  padding: 8px 12px; /* Espaciado interno para botones */
-  border-radius: 4px; /* Bordes redondeados */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 8px 12px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
 }
 
 .nav-link:hover {
-  background-color: #3367d6; /* Color de fondo en hover */
-  color: #fff; /* Color de texto blanco en hover */
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .burger-icon {
-  display: none; /* Ocultar icono de hamburguesa por defecto */
-  font-size: 24px; /* Tamaño del icono */
-  color: #fff; /* Color blanco */
-  cursor: pointer; /* Cambiar cursor al pasar por encima */
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff;
 }
 
 @media (max-width: 768px) {
+  .header {
+    padding: 0;
+    height: 50px; /* Altura reducida para móviles */
+  }
+
+  .nav {
+    padding: 0 10px; /* Reducido de 15px a 10px */
+    max-width: 95%; /* Añadido para limitar el ancho en móviles */
+  }
+
   .nav-list {
-    display: none; /* Ocultar menú en móvil por defecto */
-    flex-direction: column; /* Cambiar a columna */
-    position: absolute; /* Posición absoluta */
-    top: 60px; /* Espaciado desde la parte superior */
-    right: 0; /* Alinear a la derecha */
-    background-color: #1e1e1e; /* Fondo oscuro */
-    width: 100%; /* Ancho completo */
-    z-index: 1; /* Asegurar que esté por encima */
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(18, 18, 18, 0.95);
+    position: absolute;
+    top: 45px; /* Ajustado para coincidir con la altura del header en móviles */
+    left: 0;
+    padding: 10px 0;
   }
 
   .nav-list.show {
-    display: flex; /* Mostrar menú cuando se activa */
-  }
-
-  .burger-icon {
-    display: block; /* Mostrar icono de hamburguesa en móvil */
+    display: flex;
   }
 
   .nav-item {
-    margin: 10px 0; /* Espaciado vertical entre elementos */
-    text-align: center; /* Centrar texto en móvil */
+    margin: 5px 0;
+    width: 100%;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 10px 20px;
+    border-radius: 0;
+  }
+
+  .burger-icon {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 10px; /* Cambiado de 15px a 10px para mantener la consistencia */
+    transform: translateY(-50%);
+  }
+
+  /* Ajuste para el contenido principal en móviles */
+  main {
+    padding-top: 50px; /* Ajustado para coincidir con la altura del header en móviles */
+  }
+}
+
+/* Ajuste para el contenido principal en escritorio */
+@media (min-width: 769px) {
+  main {
+    padding-top: 80px; /* Ajustado para dar espacio al header fijo */
   }
 }
 
 /* Estilos de las publicaciones */
 .post-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
   padding: 20px;
 }
 
 .post {
-  width: 300px;
-  margin: 20px;
-  background-color: #1e1e1e;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
 
 .post:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transform: translateY(-10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
 .post-header {
-  height: 200px;
-  overflow: hidden;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  height: 180px;
+  position: relative;
+  overflow: hidden; /* Añadido para evitar que el texto sobresalga */
 }
 
 .post-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: brightness(0.8);
+  transition: filter 0.3s ease;
+  position: absolute; /* Añadido para posicionar la imagen */
+  top: 0; /* Añadido para alinear la imagen en la parte superior */
+  left: 0; /* Añadido para alinear la imagen a la izquierda */
+}
+
+.post:hover .post-img {
+  filter: brightness(1);
 }
 
 .post-content {
   padding: 20px;
-}
-
-.post-title {
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: #ffffff;
+  position: relative;
+  height: auto; /* Cambiado de altura fija a auto */
+  min-height: 180px; /* Altura mínima para mantener consistencia */
+  display: flex;
+  flex-direction: column;
 }
 
 .post-excerpt {
   font-size: 14px;
   color: #b0b0b0;
   margin-bottom: 20px;
+  line-height: 1.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limitar a 3 líneas */
+  -webkit-box-orient: vertical;
+  flex-grow: 1; /* Permite que el extracto ocupe el espacio disponible */
 }
 
 .read-more {
+  position: static; /* Cambiado de absolute a static */
+  margin-top: auto; /* Empuja el botón hacia abajo */
+  align-self: flex-start; /* Alinea el botón a la izquierda */
   display: inline-block;
-  background-color: #4285f4;
+  background-color: rgba(255, 255, 255, 0.1);
   color: #fff;
   text-decoration: none;
-  padding: 8px 16px;
-  border-radius: 4px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
   font-size: 14px;
-  transition: background-color 0.3s ease;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .read-more:hover {
-  background-color: #3367d6;
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .post-list {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .post-header {
+    height: 160px;
+  }
+
+  .post-content {
+    padding: 15px;
+    min-height: 160px; /* Ajustar altura mínima para móviles */
+  }
+
+  .post-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .post-excerpt {
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+
+  .read-more {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
 }
 
 /* Estilos de la paginación */
