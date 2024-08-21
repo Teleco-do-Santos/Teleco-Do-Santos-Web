@@ -5,10 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quienes Somos</title>
   <link rel="stylesheet" href="design/estilos.css">
+   <!-- Agregar favicon -->
+   <link rel="icon" type="image/png" href="src/Logo Astrologia Tarot Minimalista Blanco y Negro (1).png">
+   <!-- Favicon para dispositivos Apple -->
+   <link rel="apple-touch-icon" href="src/Logo Astrologia Tarot Minimalista Blanco y Negro (1).png">
+  <style>
+    .grupo-roles {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .miembro.card {
+      flex: 0 1 calc(33.333% - 20px);
+      margin: 10px;
+      text-align: center;
+      max-width: 300px;
+    }
+    @media (max-width: 992px) {
+      .miembro.card {
+        flex: 0 1 calc(50% - 20px);
+      }
+    }
+    @media (max-width: 576px) {
+      .miembro.card {
+        flex: 0 1 100%;
+      }
+    }
+    header nav ul {
+      margin-top: -20px;
+    }
+  </style>
 </head>
 <body>
   <header>
-    
     <span class="burger-icon" onclick="toggleMenu()">&#9776;</span>
     <a href="index.html" class="logo">Teleco do Santos</a>
     <nav>
@@ -24,67 +55,69 @@
   <main>
     <div class="imagen-container">
       <img src="src/Logo Astrologia Tarot Minimalista Blanco y Negro (1).png" alt="Descripción de la imagen">
-      <div class="imagen-description">
-        <h2>¿Quiénes somos?</h2>
-        <p>
-            Somos "Teleco do Santos", un grupo de estudiantes de cuarto medio de la especialidad de telecomunicaciones del colegio Cardenal Raúl Silva Henríquez. Nos enfrentamos al desafío de la Feria Técnico Profesional (FTP) con un proyecto llamado "Security Tech".
-        </p>
-        <p>
-            Nuestro objetivo es enseñar de manera activa sobre las tecnologías de seguridad más conocidas del último tiempo, con el fin de mejorar el nivel de seguridad de las personas respecto a su entorno. Nos hemos propuesto dar a conocer estas herramientas de una manera accesible y comprensible para todos nuestros invitados, independientemente de su nivel de conocimiento tecnológico.
-        </p>
-        <p>
-            Trabajamos juntos para desarrollar "Teleco te enseña", un servicio que brinda orientación y conocimientos sobre las últimas tendencias en seguridad. Estamos emocionados de compartir nuestras ideas y aprendizajes con la comunidad durante la FTP.
-        </p>
-      </div>
-  </div>
-<h2 class="subtitulo">Grupo y roles</h2>
+    </div>
+    
+    <div class="imagen-description animate-on-scroll">
+      <h2>¿Quiénes somos?</h2>
+      <p>
+          Somos "Teleco do Santos", un grupo de estudiantes de cuarto medio de la especialidad de telecomunicaciones del colegio Cardenal Raúl Silva Henríquez. Nos enfrentamos al desafío de la Feria Técnico Profesional (FTP) con un proyecto llamado "Security Tech".
+      </p>
+      <p>
+          Nuestro objetivo es enseñar de manera activa sobre las tecnologías de seguridad más conocidas del último tiempo, con el fin de mejorar el nivel de seguridad de las personas respecto a su entorno. Nos hemos propuesto dar a conocer estas herramientas de una manera accesible y comprensible para todos nuestros invitados, independientemente de su nivel de conocimiento tecnológico.
+      </p>
+      <p>
+          Trabajamos juntos para desarrollar "Teleco te enseña", un servicio que brinda orientación y conocimientos sobre las últimas tendencias en seguridad. Estamos emocionados de compartir nuestras ideas y aprendizajes con la comunidad durante la FTP.
+      </p>
+    </div>
 
-<div class="grupo-roles">
-    <div class="miembro card">
-        <img src="src/per1.jpeg" alt="Sebastian Canales">
-        <p>Sebastian Canales - Líder</p>
+    <h2 class="subtitulo animate-on-scroll">Grupo y roles</h2>
+
+    <div class="grupo-roles animate-on-scroll">
+        <div class="miembro card">
+            <img src="src/per1.jpeg" alt="Sebastian Canales">
+            <p>Sebastian Canales - Líder</p>
+        </div>
+        <div class="miembro card">
+            <img src="src/per1.jpeg" alt="Maximiliano Cornejo">
+            <p>Maximiliano Cornejo - Vocero</p>
+        </div>
+        <div class="miembro card">
+            <img src="src/per1.jpeg" alt="Aaron Morales">
+            <p>Aaron Morales - Diseñador y programador</p>
+        </div>
+        <div class="miembro card">
+            <img src="src/per1.jpeg" alt="Juan Varas">
+            <p>Juan Varas - Diseñador y programador</p>
+        </div>
+        <div class="miembro card">
+            <img src="src/per1.jpeg" alt="Isidora Opazo">
+            <p>Isidora Opazo - Encargada de traducción</p>
+        </div>
+        <div class="miembro card">
+            <img src="src/per1.jpeg" alt="Vicente Morales">
+            <p>Vicente Morales - Documentación</p>
+        </div>
     </div>
-    <div class="miembro card">
-        <img src="src/per1.jpeg" alt="Maximiliano Cornejo">
-        <p>Maximiliano Cornejo - Vocero</p>
+    <div class="imagen-description animate-on-scroll">
+      <h2>Feria TP e Inspiracion</h2>
+      <p>La FTP es un evento que se desarrolla año tras año, donde los estudiantes de las especialidades técnicas de nuestro colegio, tanto en el área de Telecomunicaciones como en Gastronomía, viven la experiencia del primer vínculo con su posible futuro laboral. Algunos se adentran en este mundo, y esto se lleva a cabo teniendo como eje principal el desarrollo de un proyecto que debe cumplir con ciertos criterios. 
+      </p>
+      <p>En la primera instancia de este evento se nos presenta una problemática. A partir de esta, nosotros debemos concretar el proyecto. La temática de este año es la seguridad en el área local, ya que, como sabemos, últimamente hay mucha inseguridad en nuestras comunas y pocas herramientas para defendernos. En el proceso, antes de elegir nuestro proyecto, tuvimos una lluvia de ideas donde todas las propuestas tenían algo en común: un usuario. Sin embargo, siempre había un problema dentro de esas ideas: ¿qué pasa si el usuario no sabe nada de tecnologías? Entonces decidimos, como grupo, ser nosotros quienes diéramos esas herramientas, proporcionando conocimientos sobre tecnologías de seguridad accesibles para nuestros invitados. </p>
     </div>
-    <div class="miembro card">
-        <img src="src/per1.jpeg" alt="Aaron Morales">
-        <p>Aaron Morales - Diseñador y programador</p>
-    </div>
-    <div class="miembro card">
-        <img src="src/per1.jpeg" alt="Juan Varas">
-        <p>Juan Varas - Diseñador y programador</p>
-    </div>
-    <div class="miembro card">
-        <img src="src/per1.jpeg" alt="Isidora Opazo">
-        <p>Isidora Opazo - Encargada de traducción</p>
-    </div>
-    <div class="miembro card">
-        <img src="src/per1.jpeg" alt="Vicente Morales">
-        <p>Vicente Morales - Documentación</p>
-    </div>
-</div>
-<div class="imagen-description">
-  <h2>Feria TP e Inspiracion</h2>
-  <p>La FTP es un evento que se desarrolla año tras año, donde los estudiantes de las especialidades técnicas de nuestro colegio, tanto en el área de Telecomunicaciones como en Gastronomía, viven la experiencia del primer vínculo con su posible futuro laboral. Algunos se adentran en este mundo, y esto se lleva a cabo teniendo como eje principal el desarrollo de un proyecto que debe cumplir con ciertos criterios. 
-    </p>
-    <p>En la primera instancia de este evento se nos presenta una problemática. A partir de esta, nosotros debemos concretar el proyecto. La temática de este año es la seguridad en el área local, ya que, como sabemos, últimamente hay mucha inseguridad en nuestras comunas y pocas herramientas para defendernos. En el proceso, antes de elegir nuestro proyecto, tuvimos una lluvia de ideas donde todas las propuestas tenían algo en común: un usuario. Sin embargo, siempre había un problema dentro de esas ideas: ¿qué pasa si el usuario no sabe nada de tecnologías? Entonces decidimos, como grupo, ser nosotros quienes diéramos esas herramientas, proporcionando conocimientos sobre tecnologías de seguridad accesibles para nuestros invitados. </p>
-    </section>
-  </div>
     <section class="imagen-description">
    
     </section>
 
-  <footer>
-    <p>&copy; 2024 Teleco Do Santos. Todos los derechos reservados.</p>
-  </footer>
-  <script>
-    function toggleMenu() {
-      var nav = document.querySelector('nav');
-      nav.classList.toggle('show');
-    }
-  </script>
-
-</body>
+    <footer>
+      <p>&copy; 2024 Teleco Do Santos. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+      function toggleMenu() {
+        var nav = document.querySelector('nav');
+        nav.classList.toggle('show');
+      }
+    </script>
+<script src="quienes.js"></script>
+<script src="animations.js"></script>
+  </body>
 </html>
