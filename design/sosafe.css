@@ -104,17 +104,49 @@ nav a.active {
 
 /* Estilos de la sección del video */
 .video-container {
-  margin: 40px 0;
-  display: flex;
-  justify-content: center;
+    margin: 60px auto;
+    max-width: 90%;
+    background-color: #1e1e1e;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.video-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.video-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4285f4, #34a853, #fbbc05, #ea4335);
 }
 
 .video-container iframe {
-  width: 100%;
-  max-width: 800px;
-  height: 450px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    display: block;
+    min-height: 600px;
+}
+
+@media (max-width: 768px) {
+    .video-container {
+        max-width: 100%;
+        margin: 30px auto;
+        border-radius: 16px;
+    }
+
+    .video-container iframe {
+        min-height: auto;
+    }
 }
 
 /* Estilos de la sección de materiales */
@@ -150,47 +182,87 @@ nav a.active {
 
 /* Estilos de la sección de descripción del video */
 .video-description {
-  padding: 40px 20px;
-  max-width: 800px;
-  margin: 0 auto;
+  padding: 60px 40px;
+  max-width: 1000px;
+  margin: 40px auto;
   font-family: 'Roboto', sans-serif;
-  color: #e0e0e0; /* Color de texto claro para mejor legibilidad */
-  line-height: 1.6;
-  background-color: #1f1f1f; /* Fondo oscuro */
-  border-radius: 12px; /* Bordes más redondeados */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Sombra más intensa */
-  transition: transform 0.3s; /* Transición suave para el efecto hover */
+  color: #e0e0e0;
+  line-height: 1.8;
+  background-color: #1f1f1f;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-description::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #1e88e5, #42a5f5, #1e88e5);
+  animation: gradient 3s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradient {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
 }
 
 .video-description:hover {
-  transform: scale(1.02); /* Efecto de aumento al pasar el ratón */
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
 }
 
 .video-description h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #ffffff; /* Color blanco para el título */
-  font-size: 28px;
-  font-weight: 600; /* Peso de fuente más fuerte para destacar */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Sombra de texto para mayor profundidad */
+  text-align: left;
+  margin-bottom: 30px;
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
 .video-description p {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   font-size: 18px;
-  line-height: 1.8; /* Mayor interlineado para mejor legibilidad */
+  line-height: 1.8;
+  color: #b0b0b0;
 }
 
 .video-description a {
-  color: #1e88e5; /* Color azul claro para enlaces */
+  color: #42a5f5;
   text-decoration: none;
-  font-weight: bold; /* Negrita para enlaces */
-  transition: color 0.3s; /* Transición suave para el color del enlace */
+  font-weight: 500;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.video-description a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #42a5f5;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
 }
 
 .video-description a:hover {
-  text-decoration: underline; /* Subrayado al pasar el ratón */
-  color: #42a5f5; /* Color más claro al pasar el ratón */
+  color: #64b5f6;
+}
+
+.video-description a:hover::after {
+  visibility: visible;
+  transform: scaleX(1);
 }
 
 /* Estilos de la sección de últimas publicaciones */
@@ -292,11 +364,6 @@ nav a:hover {
 }
 }
 
- 
-
-
-
-
 /* Estilos para dispositivos de escritorio */
 @media (min-width: 769px) {
   .burger-icon {
@@ -312,5 +379,20 @@ nav a:hover {
   .logo {
     display: block;
     margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .video-description {
+    padding: 40px 20px;
+    margin: 20px auto;
+  }
+
+  .video-description h2 {
+    font-size: 28px;
+  }
+
+  .video-description p {
+    font-size: 16px;
   }
 }
