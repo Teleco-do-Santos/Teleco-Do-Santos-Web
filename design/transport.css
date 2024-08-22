@@ -1,0 +1,757 @@
+/* Estilos generales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #121212; /* Fondo oscuro para todo el cuerpo */
+  color: #ffffff; /* Color de texto blanco */
+  line-height: 1.6;
+  padding: 20px;
+}
+
+a {
+  color: #1e88e5; /* Color de enlaces */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* Estilos del header */
+header {
+  background-color: #1f1f1f; /* Fondo oscuro para el header */
+  padding: 10px 20px; /* Espaciado superior e inferior reducido */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Sombra más sutil */
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff; /* Color blanco para el logo */
+
+
+}
+
+/* Estilos para el menú de navegación */
+nav {
+  background-color: #1f1f1f; /* Fondo del menú */
+  padding: 15px 30px; /* Espaciado interno */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra para profundidad */
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Estilos para la lista de navegación */
+nav ul {
+  list-style-type: none; /* Eliminar puntos de la lista */
+  margin: 0; /* Eliminar márgenes */
+  padding: 0; /* Eliminar relleno */
+  display: flex; /* Usar flexbox para alinear horizontalmente */
+  justify-content: space-between; /* Espaciado uniforme entre elementos */
+}
+
+/* Estilos para los elementos de la lista */
+nav li {
+  margin: 0 15px; /* Espaciado entre los elementos de la lista */
+}
+
+/* Estilos para los enlaces */
+nav a {
+  color: #ffffff; /* Color del texto en blanco */
+  text-decoration: none; /* Eliminar subrayado */
+  font-size: 18px; /* Tamaño de fuente */
+  padding: 10px 20px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s, color 0.3s; /* Transición suave */
+}
+
+/* Efecto hover para los enlaces */
+nav a:hover {
+  background-color: #3a3a3a; /* Color de fondo al pasar el mouse */
+  color: #ffffff; /* Asegurarse de que el texto siga siendo blanco */
+}
+
+/* Estilo activo para el enlace actual */
+nav a.active {
+  background-color: #575757; /* Color de fondo para el enlace activo */
+  color: #ffffff; /* Color del texto activo */
+}
+
+
+/* Estilo del icono de menú hamburguesa */
+.burger-icon {
+  display: none; /* Oculto por defecto */
+  font-size: 30px; /* Tamaño del icono */
+  cursor: pointer; /* Cambiar cursor al pasar sobre el icono */
+  color: #1e88e5; /* Color del icono */
+  margin-right: 10px; /* Espacio entre el icono y el logo */
+  transition: color 0.3s; /* Transición suave para el color */
+}
+
+  /* Estilos de la sección del video */
+  .video-container {
+    margin: 60px auto;
+    max-width: 90%;
+    background-color: #1e1e1e;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+  }
+  
+  .video-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  }
+  
+  .video-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4285f4, #34a853, #fbbc05, #ea4335);
+  }
+  
+  .video-container iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    display: block;
+    min-height: 600px; /* Altura mínima para pantallas grandes */
+  }
+  
+  /* Media query para dispositivos móviles */
+  @media (max-width: 768px) {
+    .video-container {
+      max-width: 100%;
+      margin: 30px auto;
+      border-radius: 16px;
+    }
+    
+    .video-container iframe {
+      min-height: auto; /* Eliminar altura mínima en móviles */
+    }
+  }
+  
+  /* Estilos de la sección de materiales */
+  .materials {
+    background-color: #424242;
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin: 20px;
+  }
+  
+  .materials h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .materials ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .materials li {
+    margin: 10px;
+    padding: 10px 15px;
+    background-color: #616161;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .materials li:hover {
+    background-color: #757575;
+  }
+  
+  /* Estilos de la sección de descripción del video */
+  .video-description {
+    padding: 100px 60px;
+    background-color: #0f172a;
+    border-radius: 24px;
+    margin: 100px auto;
+    max-width: 1200px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .video-description::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #1e3a8a, #3730a3);
+    opacity: 0.1;
+    z-index: 0;
+  }
+
+  .video-description h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 3rem;
+    font-weight: 900;
+    color: #f8fafc;
+    position: relative;
+    z-index: 1;
+    letter-spacing: -0.03em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    line-height: 1.2;
+  }
+
+  .video-description p {
+    max-width: 75ch;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #e2e8f0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+  }
+
+  /* Estilos responsivos para la sección de descripción del video */
+  @media (max-width: 768px) {
+    .video-description {
+      padding: 80px 40px;
+      margin: 60px 30px;
+    }
+
+    .video-description h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+    }
+
+    .video-description p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .video-description {
+      padding: 60px 30px;
+    }
+
+    .video-description h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    .video-description p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+  }
+  
+  /* Estilos de la sección de últimas publicaciones */
+  .latest-posts {
+    background-color: #424242;
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin: 20px;
+  }
+  
+  .latest-posts h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .post-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .post-item {
+    width: 300px;
+    margin: 20px;
+    background-color: #616161;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  
+  .post-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .post-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .post-content {
+    padding: 20px;
+  }
+  
+  .post-content h3 {
+    margin-bottom: 10px;
+  }
+  
+  /* Estilos del footer */
+  footer {
+    background-color: #1f1f1f;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  footer p {
+    font-size: 14px;
+  }
+
+  /* Estilos responsivos */
+@media (max-width: 768px) {
+  .burger-icon {
+    display: block; /* Mostrar el icono hamburguesa en móviles */
+    color: #ffffff;
+  }
+
+  nav {
+    display: none; /* Ocultar la navegación por defecto en móviles */
+    flex-direction: column;
+    width: 100%;
+    background-color: #1f1f1f;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+
+  nav.show {
+    display: flex; /* Mostrar la navegación cuando se activa */
+  }
+
+  nav ul {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  nav li {
+    margin: 5px 0;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .logo {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+/* Estilos para dispositivos de escritorio */
+@media (min-width: 769px) {
+  .burger-icon {
+    display: none; /* Ocultar el icono hamburguesa en escritorio */
+  }
+
+  nav {
+    display: flex; /* Mostrar la navegación en dispositivos grandes */
+  }
+
+  /* Asegurarse de que el nav tenga los mismos estilos que en móvil */
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  nav li {
+    margin: 0 15px;
+  }
+
+  nav a {
+    padding: 10px 20px;
+  }
+}
+
+/* Estilos para el botón tubus */
+.tubus-button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #1e88e5;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.tubus-button:hover {
+  background-color: #1976d2;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.tubus-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tubus-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+.tubus-button:focus:not(:active)::after {
+  animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
+  }
+}
+
+/* Estilos para la sección del botón Tubus */
+.tubus-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #13151a, #090b11);
+  border-radius: 16px;
+  margin: 60px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.tubus-button-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  transform: rotate(30deg);
+  z-index: 1;
+}
+
+.tubus-button {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 16px 32px;
+  background: linear-gradient(135deg, #5e03fc, #7e22ce);
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 8px 20px rgba(94, 3, 252, 0.3);
+  transition: all 0.3s ease;
+  z-index: 2;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.tubus-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(94, 3, 252, 0.4);
+}
+
+.tubus-button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(94, 3, 252, 0.4);
+}
+
+.tubus-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #7e22ce, #5e03fc);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tubus-button:hover::before {
+  opacity: 1;
+}
+
+.tubus-button span {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .tubus-button-container {
+    padding: 60px 20px;
+  }
+
+  .tubus-button {
+    font-size: 16px;
+    padding: 14px 28px;
+  }
+}
+
+.tubus-button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.tubus-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.tubus-button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos para la lista del equipo */
+.team-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 40px 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+  list-style-type: none;
+}
+
+.team-list li {
+  background-color: #2a2a2a;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.team-list li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  background-color: #3a3a3a;
+}
+
+.team-list li img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #3a3a3a;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.team-list li:hover img {
+  transform: scale(1.05);
+  border-color: #4a4a4a;
+}
+
+.team-list li h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.team-list li:hover h3 {
+  color: #1e88e5;
+}
+
+.team-list li p {
+  font-size: 0.9rem;
+  color: #b0b0b0;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.team-list li:hover p {
+  color: #d0d0d0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación de entrada escalonada para los elementos de la lista */
+.team-list li:nth-child(1) { animation-delay: 0.1s; }
+.team-list li:nth-child(2) { animation-delay: 0.2s; }
+.team-list li:nth-child(3) { animation-delay: 0.3s; }
+.team-list li:nth-child(4) { animation-delay: 0.4s; }
+.team-list li:nth-child(5) { animation-delay: 0.5s; }
+.team-list li:nth-child(n+6) { animation-delay: 0.6s; }
+
+/* Asegurarse de que los estilos sean responsivos */
+@media (max-width: 768px) {
+  .team-list {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 30px 15px;
+  }
+
+  .team-list li {
+    padding: 20px;
+  }
+
+  .team-list li img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* Estilos para la sección de descripción del proyecto */
+.project-description {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  padding: 100px 60px;
+  border-radius: 30px;
+  margin: 120px auto;
+  max-width: 1200px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-description::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(99, 102, 241, 0.15) 0%,
+    rgba(99, 102, 241, 0) 70%
+  );
+  transform: rotate(30deg);
+}
+
+.project-description h2 {
+  font-size: 4rem;
+  color: #f8fafc;
+  margin-bottom: 60px;
+  text-align: center;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  position: relative;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project-description p {
+  font-size: 1.25rem;
+  color: #e2e8f0;
+  line-height: 1.9;
+  margin-bottom: 30px;
+  position: relative;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.project-description p:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+/* Estilos responsivos para la sección de descripción del proyecto */
+@media (max-width: 768px) {
+  .project-description {
+    padding: 80px 40px;
+    margin: 80px 20px;
+    border-radius: 24px;
+  }
+
+  .project-description h2 {
+    font-size: 3rem;
+    margin-bottom: 40px;
+  }
+
+  .project-description p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-description {
+    padding: 60px 30px;
+    margin: 60px 15px;
+    border-radius: 20px;
+  }
+
+  .project-description h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+
+  .project-description p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .project-description p:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
