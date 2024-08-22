@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Descripción de mi sitio web.">
+  <meta name="keywords" content="palabras, clave, aquí">
+  <title>Nombre de post</title>
+  <link rel="stylesheet" href="design/transport.css">
+</head>
+<body>
+  <header>
+    <span class="burger-icon" onclick="toggleMenu()">&#9776;</span>
+    <a href="index.html" class="logo">Teleco do Santos</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="blogs.html">Publicaciones</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    
+      
+      <section class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/YMUuS2EqK0o?si=Nsyzf3JX1XE5PjmU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </section>
+
+      <section class="project-description">
+        <div class="container">
+          <h2 class="section-title">Tele-transport</h2>
+          <p class="lead">Tele-transport es un proyecto innovador diseñado para mejorar la experiencia de los usuarios del transporte público.</p>
+          
+          <div class="content-grid">
+            <div class="content-card">
+              <h3>Nuestro Equipo</h3>
+              <ul class="team-list">
+                <li><strong>Daniel Galvez:</strong> Líder del grupo y modelador 3D</li>
+                <li><strong>Vicente Leiva:</strong> Programador de Arduino</li>
+                <li><strong>Sebastian Cruz:</strong> Programador del sistema</li>
+                <li><strong>Florencia Hernandez:</strong> Vocera del grupo y encargada del modelaje físico</li>
+                <li><strong>Martin Vera:</strong> Vocero en inglés y diseñador</li>
+              </ul>
+            </div>
+
+            <div class="content-card">
+              <h3>Objetivo del Proyecto</h3>
+              <p>Brindar comodidad y eficiencia a los usuarios del transporte público, permitiéndoles conocer en tiempo real la disponibilidad de asientos y la capacidad de cada vehículo.</p>
+            </div>
+
+            <div class="content-card">
+              <h3>Innovación Tecnológica</h3>
+              <p>Utilizamos cámaras con reconocimiento de personas instaladas en el interior de las micros para monitorear el número de pasajeros en tiempo real. Esta información se integra en una página web accesible para los usuarios.</p>
+            </div>
+
+            <div class="content-card">
+              <h3>Beneficios</h3>
+              <ul class="benefits-list">
+                <li><strong>Comodidad:</strong> Planificación anticipada del viaje, evitando largas esperas e incertidumbre.</li>
+                <li><strong>Eficiencia:</strong> Mejor gestión del espacio en el transporte público y flujo de pasajeros.</li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="conclusion">Tele-transport se compromete a transformar la experiencia del transporte público, haciéndolo más accesible y cómodo para todos.</p>
+        </div>
+        <section class="tubus-button-container">
+          <button onclick="window.open('https://tubuscl.vercel.app/', '_blank', 'noopener,noreferrer')" class="tubus-button">Visitar TuBus</button>
+        </section>
+      </section>
+
+      
+    </article>
+
+    <section class="latest-posts">
+      <h2>Últimas Publicaciones</h2>
+      <div class="post-list">
+        <div class="post-item">
+          <a href="leer-mas.html">
+            <img src="src/python1.jpg" alt="Thumbnail Post 1">
+          </a>
+          <div class="post-content">
+            <h3>Python</h3>
+            <p>Aprendiendo Python en una hora por el canal de youtube de "Hola Mundo" </p>
+          </div>
+        </div>
+        <div class="post-item">
+          <a href="Technical Security Final.html">
+            <img src="src/logot.png" alt="Thumbnail Post 2">
+          </a>
+          <div class="post-content">
+            <h3>Technical Security </h3>
+            <p>Aprenderas Junto al Equipo de Technical Security hacer una casa domotica</p>
+          </div>
+        </div>
+        <div class="post-item">
+          <a href="camaras.html">
+            <img src="src/Hikvision-Logo.jpg" alt="Thumbnail Post 3">
+          </a>
+          <div class="post-content">
+            <h3>Camaras de seguridad</h3>
+            <p>Instalacion de camaras de seguridad y configuracion de la Camaras</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Teleco do santos. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      var nav = document.querySelector('nav');
+      nav.classList.toggle('show');
+    }
+  </script>
+</body>
+</html>
