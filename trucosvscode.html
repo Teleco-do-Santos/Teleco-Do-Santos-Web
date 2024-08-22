@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Descripción de mi sitio web.">
+  <meta name="keywords" content="palabras, clave, aquí">
+  <title>Nombre de post</title>
+  <link rel="stylesheet" href="design/trucosdevscode.css">
+  <style>
+    /* Estilos para la sección de atajos de teclado */
+    .keyboard-shortcuts {
+      background-color: #1a1a1a;
+      border-radius: 12px;
+      padding: 40px 20px;
+      margin: 40px auto;
+      max-width: 1200px;
+      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+    }
+
+    .keyboard-shortcuts h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+      color: #f8f9fa;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .keyboard-shortcuts ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .keyboard-shortcuts li {
+      background-color: #2a2a2a;
+      border-radius: 8px;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .keyboard-shortcuts li:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .keyboard-shortcuts kbd {
+      background-color: #3a3a3a;
+      color: #ffffff;
+      padding: 5px 10px;
+      border-radius: 4px;
+      margin-right: 10px;
+      font-family: 'Courier New', monospace;
+      font-weight: bold;
+      min-width: 30px;
+      text-align: center;
+    }
+
+    .keyboard-shortcuts span {
+      color: #e9ecef;
+      flex-grow: 1;
+    }
+
+    /* Estilos responsivos para la sección de atajos de teclado */
+    @media (max-width: 768px) {
+      .keyboard-shortcuts {
+        padding: 30px 15px;
+        margin: 30px 10px;
+      }
+
+      .keyboard-shortcuts h2 {
+        font-size: 1.75rem;
+      }
+
+      .keyboard-shortcuts ul {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Estilos para la sección de extensiones */
+    .extension-section {
+      background-color: #1a1a1a;
+      border-radius: 16px;
+      padding: 60px 30px;
+      margin: 60px auto;
+      max-width: 1200px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .extension-section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      color: #f8f9fa;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 700;
+    }
+
+    .extension-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .extension-card {
+      background-color: #2a2a2a;
+      border-radius: 12px;
+      padding: 25px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .extension-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(31, 38, 135, 0.2);
+    }
+
+    .extension-card img {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+    }
+
+    .extension-card h3 {
+      font-size: 1.4rem;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .extension-card p {
+      font-size: 1rem;
+      color: #b0b0b0;
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    .extension-card a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #3a3a3a;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    .extension-card a:hover {
+      background-color: #4a4a4a;
+    }
+
+    /* Estilos responsivos para la sección de extensiones */
+    @media (max-width: 768px) {
+      .extension-section {
+        padding: 40px 20px;
+        margin: 40px 10px;
+      }
+
+      .extension-section h2 {
+        font-size: 2rem;
+      }
+
+      .extension-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    
+    <span class="burger-icon" onclick="toggleMenu()">&#9776;</span>
+    <a href="index.html" class="logo">Teleco do Santos</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="blogs.html">Publicaciones</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="video-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/IU7YWGqo164?si=XqIc9P3O2FH1oOkC" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+
+    <section class="video-description">
+      <h2>Trucos para VSCode</h2>
+      <p>Estos hacks y extensiones son herramientas poderosas que pueden mejorar significativamente la experiencia de programación en VSCode. Al incluir estas recomendaciones en tu web de enseñanza, ayudarás a tus estudiantes a adoptar mejores prácticas y a ser más eficientes en su trabajo. ¡Explora cada uno de ellos y descubre cómo pueden transformar tu flujo de trabajo!</p>
+      <ol>
+        <li>
+          <h2>Atajos de Teclado:</h2> 
+        </li>
+      </ol>
+
+      <div class="keyboard-shortcuts">
+        <ul>
+          <li><kbd>Ctrl</kbd> + <kbd>P</kbd>: Abrir archivos rápidamente</li>
+          <li><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>: Acceder a la paleta de comandos</li>
+          <li><kbd>Ctrl</kbd> + <kbd>B</kbd>: Mostrar/ocultar barra lateral</li>
+          <li><kbd>Ctrl</kbd> + <kbd>`</kbd>: Abrir terminal integrada</li>
+          <li><kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd>: Formatear documento</li>
+        </ul>
+      </div>
+   
+
+    <div class="extension-section">
+      <h2>Extensiones de VSCode</h2>
+      <div class="extension-grid">
+        <div class="extension-card">
+          <img src="src/prettier.png" alt="Extension Icon">
+          <h3>Prettier</h3>
+          <p>Formateador de código para mantener un estilo consistente.</p>
+          
+        </div>
+        <div class="extension-card">
+          <img src="src/live.png" alt="Extension Icon">
+          <h3>Live Server</h3>
+          <p>Servidor local para ver cambios en tiempo real.</p>
+          
+        </div>
+        <div class="extension-card">
+          <img src="src/eslint.png" alt="Extension Icon">
+          <h3>ESLint</h3>
+          <p>Herramienta para identificar y reportar patrones en JavaScript.</p>
+         
+        </div>
+        <div class="extension-card">
+          <img src="src/gitlens.png" alt="Extension Icon">
+          <h3>GitLens</h3>
+          <p>Mejora la integración de Git en VSCode.</p>
+          
+        </div>
+        <div class="extension-card">
+          <img src="src/Microsoft.Icons.Default" alt="Extension Icon">
+          <h3>Emmet</h3>
+          <p>Genera rápidamente estructuras de HTML y CSS.</p>
+          
+        </div>
+        <div class="extension-card">
+          <img src="src/Microsoft.VisualStudio.Services.Icons.Default" alt="Extension Icon">
+          <h3>Live Share</h3>
+          <p>Permite colaboración en tiempo real.</p>
+          
+        </div>
+        <div class="extension-card">
+          <img src="src/marketplace.png" alt="Extension Icon">
+          <h3>Themes y Icon Themes</h3>
+          <p>Personaliza el aspecto de VSCode.</p>
+          
+        </div>
+        <div class="extension-card">
+          <img src="src/visuales.jfif" alt="Extension Icon">
+          <h3>Custom Snippets</h3>
+          <p>Crea fragmentos de código reutilizables.</p>
+          
+        </div>
+        <div class="extension-card">
+          <img src="src/zen.webp" alt="Extension Icon">
+          <h3>Zen Mode</h3>
+          <p>Elimina distracciones ocultando barras laterales y menús.</p>
+          
+        </div>
+      </div>
+    </div>
+ </section>
+    <section class="latest-posts">
+      <h2>Últimas Publicaciones</h2>
+      <div class="post-list">
+        <div class="post-item">
+          <a href="leer-mas.html">
+            <img src="https://via.placeholder.com/300x200" alt="Thumbnail Post 1">
+          </a>
+          <div class="post-content">
+            <h3>Título Post 1</h3>
+            <p>Descripción breve del Post 1</p>
+          </div>
+        </div>
+        <div class="post-item">
+          <a href="post2.html">
+            <img src="https://via.placeholder.com/300x200" alt="Thumbnail Post 2">
+          </a>
+          <div class="post-content">
+            <h3>Título Post 2</h3>
+            <p>Descripción breve del Post 2</p>
+          </div>
+        </div>
+        <div class="post-item">
+          <a href="post3.html">
+            <img src="https://via.placeholder.com/300x200" alt="Thumbnail Post 3">
+          </a>
+          <div class="post-content">
+            <h3>Título Post 3</h3>
+            <p>Descripción breve del Post 3</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Teleco do santos. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      var nav = document.querySelector('nav');
+      nav.classList.toggle('show');
+    }
+  </script>
+</body>
+</html>
