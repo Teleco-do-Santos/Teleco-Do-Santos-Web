@@ -21,62 +21,135 @@ body {
 
 /* Header Styles */
 header {
-  background-color: #1e1e1e; /* Gris oscuro */
-  padding: 1em;
-  text-align: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
-  width: 100%; /* Ancho del header */
-  margin: 0 auto; /* Centrar el header */
-  border-bottom: 1px solid #444; /* Borde inferior */
-  position: fixed; /* Fija la barra de navegación */
-  top: 0; /* Posición superior */
-  left: 0; /* Posición izquierda */
-  right: 0; /* Posición derecha */
-  z-index: 10; /* Eleva la barra de navegación */
+  background-color: rgba(18, 18, 18, 0.5);
+  padding: 0.75em 0;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
 }
 
 .nav {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
-  justify-content: center; /* Centra los elementos */
+  justify-content: center;
   align-items: center;
-  padding: 0; /* Sin padding adicional */
 }
 
 .nav ul {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 8px 20px;
   display: flex;
-  justify-content: center; /* Centra los elementos en la barra */
-  flex-wrap: nowrap; /* Mantiene los elementos en una sola línea */
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0);
+  transition: all 0.3s ease;
 }
 
 .nav li {
-  margin: 0 15px; /* Espacio uniforme entre los elementos */
+  margin: 0 8px;
 }
 
 .nav a {
   text-decoration: none;
-  color: #ffffff; /* Color blanco para el texto */
-  padding: 10px 15px; /* Espaciado interno para mejorar el área clickeable */
-  border-radius: 20px; /* Bordes redondeados */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves */
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 12px 18px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.nav a:hover {
-  background-color: #4285f4; /* Color de fondo azul al pasar el cursor */
-  color: #fff; /* Mantiene el color blanco del texto */
+.nav a:hover, .nav a.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #4285f4;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #4285f4;
+  transition: all 0.3s ease;
+}
+
+.nav a:hover::after, .nav a.active::after {
+  width: 100%;
+  left: 0;
 }
 
 /* Responsive Design for Navigation */
 @media (max-width: 768px) {
   .nav ul {
-    flex-wrap: nowrap; /* Mantiene los elementos en una sola línea */
-    overflow-x: auto; /* Permite desplazamiento horizontal si es necesario */
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .nav ul::-webkit-scrollbar {
+    display: none;
   }
 
   .nav li {
-    margin: 0 10px; /* Espacio entre los elementos en pantallas pequeñas */
+    margin: 0 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav ul {
+    padding: 6px 15px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .nav ul::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav li {
+    margin: 0 6px;
+  }
+
+  .nav a {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 0.5em 0;
+  }
+
+  .nav ul {
+    padding: 4px 10px;
+  }
+
+  .nav li {
+    margin: 0 4px;
+  }
+
+  .nav a {
+    font-size: 13px;
+    padding: 8px 12px;
   }
 }
 
@@ -115,11 +188,12 @@ header {
   max-width: 800px;
   width: 100%;
   text-align: center;
-  margin-top: -100px; /* Cambiado de 0 a -100px para moverlo más arriba */
+  margin-top: 0; /* Changed from -100px to 0 */
   animation: fadeInUp 0.8s ease-out;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Distribuye el espacio verticalmente */
+  justify-content: center; /* Changed from space-between to center */
+  min-height: 100vh; /* Added to ensure full height */
 }
 
 .hero-content h1 {
@@ -131,15 +205,15 @@ header {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  margin-bottom: 30px;
-  margin-top: -340px;
+  margin-bottom: 350px;
+  margin-top: -140px; /* Changed from -340px to 0 */
   text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.3);
   line-height: 1.2;
   padding: 10px;
   border-radius: 10px;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
-  font-family: 'Montserrat', sans-serif; /* Cambiado de 'Pacifico' a 'Montserrat' */
+  font-family: 'Montserrat', sans-serif;
 }
 
 .hero-content p {
@@ -147,22 +221,29 @@ header {
   line-height: 1.6;
   color: #f0f0f0;
   margin-bottom: 30px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Sombra de texto sutil */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .buttons {
   display: flex;
   justify-content: center;
-  gap: 200px; /* Aumentado de 20px a 40px para mayor separación en PC */
-  margin-top: auto; /* Empuja los botones hacia abajo */
-  padding-bottom: 20px; /* Añade espacio en la parte inferior */
+  gap: 200px;
+  margin-top: auto;
+  padding-bottom: 20px;
+}
+
+/* New media query for desktop screens */
+@media (min-width: 1201px) {
+  .buttons {
+    margin-top: -50px; /* Move buttons up by 50px on desktop */
+  }
 }
 
 .btn {
   background-color: rgba(255, 255, 255, 0.1);
   color: #fff;
   border: 2px solid rgba(255, 255, 255, 0.2);
-  padding: 14px 32px;
+  padding: 15px 32px;
   font-size: 16px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -178,10 +259,10 @@ header {
 .btn::before {
   content: '';
   position: absolute;
-  top: 0;
+  top: 50;
   left: -100%;
   width: 100%;
-  height: 100%;
+  height: -1000%;
   background: linear-gradient(
     120deg,
     transparent,
@@ -202,70 +283,70 @@ header {
 }
 
 .btn-github, .btn-quienes-somos {
-  margin-left: 0;
-  margin-right: 0;
+  margin-left: 200;
+  margin-right: 100;
 }
 
 /* Additional Content Styles */
 .additional-content {
   display: flex;
-  flex-direction: column; /* Cambia a columna para apilar las secciones */
+  flex-direction: column;
   align-items: center;
-  margin-top: 10px; /* Espacio superior para separar de .hero-content */
+  margin-top: 10px;
 }
 
 .left-content, .right-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 80%; /* Ancho de la sección */
-  margin: 40px 0; /* Espacio entre las filas */
+  width: 80%;
+  margin: 40px 0;
 }
 
 .side-image {
-  width: 40%; /* Ajusta el ancho de las imágenes laterales */
-  height: auto; /* Mantiene la proporción de la imagen */
-  border-radius: 20px; /* Bordes redondeados opcionales */
+  width: 40%;
+  height: auto;
+  border-radius: 20px;
 }
 
 .left-content p, .right-content p {
-  width: 50%; /* Ajusta el ancho del texto */
-  margin: 0 30px; /* Espacio entre la imagen y el texto */
-  font-size: 20px; /* Tamaño del texto */
-  color: #fff; /* Color del texto */
-  text-align: left; /* Alineación del texto */
+  width: 50%;
+  margin: 0 30px;
+  font-size: 20px;
+  color: #fff;
+  text-align: left;
 }
 
 /* Blog Styles */
 .blog {
   display: flex;
-  flex-direction: column; /* Mantiene la estructura vertical para el título */
+  flex-direction: column;
   align-items: center;
   padding: 2em;
-  background-color: #1e1e1e; /* Fondo más oscuro */
+  background-color: #1e1e1e;
   color: #fff;
   text-align: center;
 }
 
 .blog-posts {
   display: flex;
-  justify-content: center; /* Centra los elementos en la fila */
-  align-items: stretch; /* Alinea los elementos al inicio */
-  width: 100%; /* Asegura que ocupe todo el ancho disponible */
-  flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples filas si es necesario */
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .blog-post {
-  flex: 1 1 300px; /* Permite que cada blog ocupe el mismo espacio, con un ancho mínimo de 300px */
-  margin: 20px; /* Espacio entre los blogs */
-  max-width: 300px; /* Establece un ancho máximo para los blogs */
-  background-color: #2d2d2d; /* Fondo más claro que el contenedor principal */
+  flex: 1 1 300px;
+  margin: 20px;
+  max-width: 300px;
+  background-color: #2d2d2d;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-decoration: none; /* Elimina el subrayado del enlace */
-  color: inherit; /* Mantiene el color del texto heredado */
-  transition: all 0.3s ease; /* Añade una transición suave al efecto hover */
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -277,10 +358,10 @@ header {
 }
 
 .blog-post img {
-  width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
-  height: 200px; /* Establece una altura fija para todas las imágenes */
-  object-fit: cover; /* Mantiene la proporción de la imagen y recorta si es necesario */
-  border-radius: 8px; /* Bordes redondeados */
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
   margin-bottom: 15px;
 }
 
@@ -307,32 +388,81 @@ header {
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .contenedor-principal {
-    background-attachment: scroll;
-    padding: 0; /* Eliminamos el padding para aprovechar todo el espacio */
-    background-position: top center;
-  }
-
-  .hero {
-    min-height: 100vh; /* Ocupar toda la altura de la pantalla */
-    padding: 0; /* Eliminar padding */
-  }
-
+/* Media query for screens up to 1200px */
+@media (max-width: 1200px) {
   .hero-content {
-    padding: 20px;
-    margin-top: 60px; /* Mantener espacio para la barra de navegación fija */
-    height: calc(100vh - 60px); /* Altura total menos el espacio de la barra de navegación */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Asegura que el espacio se distribuya correctamente en móviles */
-    background-color: rgba(18, 18, 18, 0); /* Mantener el fondo semi-transparente */
+    max-width: 90%;
+    padding: 40px;
+    margin-top: 0; /* Remove negative margin */
   }
 
   .hero-content h1 {
     font-size: 3.5rem;
-    margin-top: 0; /* Eliminar margen superior negativo */
+    margin-top: 0; /* Remove negative margin */
+    margin-top: 80px; 
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+  .buttons {
+    gap: 200px; /* Reduce gap between buttons */
+  }
+
+  .btn {
+    padding: 12px 28px;
+    font-size: 14px;
+  }
+
+  .left-content, .right-content {
+    width: 90%;
+  }
+
+  .side-image {
+    width: 45%;
+  }
+
+  .left-content p, .right-content p {
+    font-size: 18px;
+  }
+
+  .blog-posts {
+    justify-content: space-around;
+  }
+
+  .blog-post {
+    flex: 0 1 calc(33.333% - 40px);
+    margin: 20px 10px;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contenedor-principal {
+    background-attachment: scroll;
+    padding: 0;
+    background-position: top center;
+  }
+
+  .hero {
+    min-height: 100vh;
+    padding: 0;
+  }
+
+  .hero-content {
+    padding: 20px;
+    margin-top: 60px;
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(18, 18, 18, 0);
+  }
+
+  .hero-content h1 {
+    font-size: 3.5rem;
+    margin-top: 0;
     padding: 15px;
   }
 
@@ -342,7 +472,7 @@ header {
     margin-bottom: 1.5em;
     text-align: center;
     max-width: 100%;
-    background-color: transparent; /* Eliminar fondo adicional en móviles */
+    background-color: transparent;
     padding: 0;
     border-radius: 10px;
   }
@@ -350,13 +480,13 @@ header {
   .buttons {
     position: static;
     bottom: auto;
-    margin-top: auto; /* Empujar los botones hacia abajo */
-    padding-bottom: 20px; /* Añadir espacio en la parte inferior */
+    margin-top: auto;
+    padding-bottom: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    gap: 20px; /* Mantiene la separación original en dispositivos móviles */
+    gap: 20px;
   }
 
   .btn {
@@ -364,33 +494,33 @@ header {
     margin: 10px 0;
     min-width: 0;
     padding: 12px 24px;
-    background-color: rgba(33, 33, 33, 0.9); /* Fondo oscuro más opaco para móviles */
+    background-color: rgba(33, 33, 33, 0.9);
   }
 
   .left-content, .right-content {
-    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    flex-direction: column;
     align-items: center;
   }
 
   .side-image {
-    width: 80%; /* Aumenta el tamaño de las imágenes en pantallas pequeñas */
-    margin-bottom: 20px; /* Espacio inferior para separar de texto */
+    width: 80%;
+    margin-bottom: 20px;
   }
 
   .left-content p, .right-content p {
-    width: 100%; /* Texto ocupa todo el ancho */
+    width: 100%;
     margin: 0;
-    text-align: center; /* Centra el texto */
+    text-align: center;
   }
 
   .blog-posts {
-    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
-    align-items: center; /* Centra los elementos */
+    flex-direction: column;
+    align-items: center;
   }
 
   .blog-post {
-    max-width: 90%; /* Aumenta el ancho en pantallas pequeñas */
-    margin: 10px 0; /* Espacio entre los blogs */
+    max-width: 90%;
+    margin: 10px 0;
   }
 }
 
