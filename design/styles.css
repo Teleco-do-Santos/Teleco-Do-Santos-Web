@@ -481,20 +481,21 @@ header {
     position: static;
     bottom: auto;
     margin-top: auto;
-    padding-bottom: 20px;
+    padding-bottom: 60px; /* Increased padding-bottom to move buttons up */
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    gap: 20px;
+    gap: 15px; /* Reduced gap between buttons */
   }
 
   .btn {
     width: 80%;
-    margin: 10px 0;
+    margin: 0; /* Removed vertical margin */
     min-width: 0;
     padding: 12px 24px;
     background-color: rgba(33, 33, 33, 0.9);
+    font-size: 14px; /* Slightly smaller font size */
   }
 
   .left-content, .right-content {
@@ -545,6 +546,36 @@ header {
   .btn {
     width: 100%;
     max-width: 250px;
+  }
+}
+
+/* New media query for very small devices */
+@media (max-width: 360px) {
+  .hero-content {
+    padding: 15px; /* Reduced padding */
+    justify-content: flex-start; /* Align content to the top */
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    margin-top: 40px; /* Added top margin to push content down slightly */
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    margin-bottom: 30px; /* Increased bottom margin */
+  }
+
+  .buttons {
+    padding-bottom: 40px; /* Reduced padding to move buttons up */
+    gap: 12px; /* Further reduced gap between buttons */
+  }
+
+  .btn {
+    width: 90%;
+    padding: 10px 20px;
+    font-size: 13px;
   }
 }
 
