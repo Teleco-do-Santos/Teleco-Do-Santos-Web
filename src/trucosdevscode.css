@@ -1,0 +1,508 @@
+/* Estilos generales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #121212; /* Fondo oscuro para todo el cuerpo */
+  color: #ffffff; /* Color de texto blanco */
+  line-height: 1.6;
+  padding: 20px;
+}
+
+a {
+  color: #1e88e5; /* Color de enlaces */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* Estilos del header */
+header {
+  background-color: #1f1f1f; /* Fondo oscuro para el header */
+  padding: 10px 20px; /* Espaciado superior e inferior reducido */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Sombra más sutil */
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff; /* Color blanco para el logo */
+
+
+}
+
+/* Estilos para el menú de navegación */
+nav {
+  background-color: #1f1f1f; /* Fondo del menú */
+  padding: 15px 30px; /* Espaciado interno */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra para profundidad */
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Estilos para la lista de navegación */
+nav ul {
+  list-style-type: none; /* Eliminar puntos de la lista */
+  margin: 0; /* Eliminar márgenes */
+  padding: 0; /* Eliminar relleno */
+  display: flex; /* Usar flexbox para alinear horizontalmente */
+  justify-content: space-between; /* Espaciado uniforme entre elementos */
+}
+
+/* Estilos para los elementos de la lista */
+nav li {
+  margin: 0 15px; /* Espaciado entre los elementos de la lista */
+}
+
+/* Estilos para los enlaces */
+nav a {
+  color: #ffffff; /* Color del texto en blanco */
+  text-decoration: none; /* Eliminar subrayado */
+  font-size: 18px; /* Tamaño de fuente */
+  padding: 10px 20px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s, color 0.3s; /* Transición suave */
+}
+
+/* Efecto hover para los enlaces */
+nav a:hover {
+  background-color: #3a3a3a; /* Color de fondo al pasar el mouse */
+  color: #ffffff; /* Asegurarse de que el texto siga siendo blanco */
+}
+
+/* Estilo activo para el enlace actual */
+nav a.active {
+  background-color: #575757; /* Color de fondo para el enlace activo */
+  color: #ffffff; /* Color del texto activo */
+}
+
+
+/* Estilo del icono de menú hamburguesa */
+.burger-icon {
+  display: none; /* Oculto por defecto */
+  font-size: 30px; /* Tamaño del icono */
+  cursor: pointer; /* Cambiar cursor al pasar sobre el icono */
+  color: #1e88e5; /* Color del icono */
+  margin-right: 10px; /* Espacio entre el icono y el logo */
+  transition: color 0.3s; /* Transición suave para el color */
+}
+
+  /* Estilos de la sección del video */
+  .video-container {
+    margin: 60px auto;
+    max-width: 90%;
+    background-color: #1e1e1e;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+  }
+  
+  .video-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  }
+  
+  .video-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4285f4, #34a853, #fbbc05, #ea4335);
+  }
+  
+  .video-container iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    display: block;
+    min-height: 600px; /* Altura mínima para pantallas grandes */
+  }
+  
+  /* Media query para dispositivos móviles */
+  @media (max-width: 768px) {
+    .video-container {
+      max-width: 100%;
+      margin: 30px auto;
+      border-radius: 16px;
+    }
+    
+    .video-container iframe {
+      min-height: auto; /* Eliminar altura mínima en móviles */
+    }
+  }
+  
+  /* Estilos de la sección de materiales */
+  .materials {
+    background-color: #424242;
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin: 20px;
+  }
+  
+  .materials h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .materials ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .materials li {
+    margin: 10px;
+    padding: 10px 15px;
+    background-color: #616161;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .materials li:hover {
+    background-color: #757575;
+  }
+  
+  /* Estilos de la sección de descripción del video */
+  .video-description {
+    padding: 60px 20px;
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    margin: 40px 20px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+  }
+
+  .video-description h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: #f8f9fa;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .video-description p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #e9ecef;
+    text-align: justify;
+  }
+
+  /* Estilos responsivos para la descripción del video */
+  @media (max-width: 768px) {
+    .video-description {
+      padding: 40px 15px;
+      margin: 30px 10px;
+    }
+
+    .video-description h2 {
+      font-size: 2rem;
+    }
+
+    .video-description p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+  }
+  
+  /* Estilos de la sección de últimas publicaciones */
+  .latest-posts {
+    background-color: #424242;
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin: 20px;
+  }
+  
+  .latest-posts h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .post-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .post-item {
+    width: 300px;
+    margin: 20px;
+    background-color: #616161;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  
+  .post-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .post-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .post-content {
+    padding: 20px;
+  }
+  
+  .post-content h3 {
+    margin-bottom: 10px;
+  }
+  
+  /* Estilos del footer */
+  footer {
+    background-color: #1f1f1f;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  footer p {
+    font-size: 14px;
+  }
+
+  /* Estilos responsivos */
+@media (max-width: 768px) {
+
+  .burger-icon {
+    display: block; /* Mostrar el icono hamburguesa en móviles */
+    color: #ffffff;
+}
+
+nav {
+    display: none; /* Ocultar la navegación por defecto en móviles */
+    flex-direction: column; /* Cambiar a dirección vertical */
+    width: 100%; /* Ancho completo */
+    background-color: #1f1f1f; /* Fondo oscuro para el menú */
+    position: absolute; /* Posicionar el menú */
+    top: 90px; /* Alinear debajo del header */
+    left: 0;
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+    z-index: 1000; /* Asegurarse de que esté por encima de otros elementos */
+}
+
+nav.show {
+    display: flex; /* Mostrar la navegación cuando se activa */
+}
+
+nav ul {
+  flex-direction: column; /* Stack links vertically */
+  justify-content: flex-start;
+}
+nav li {
+    margin: 5px 0; /* Espaciado vertical entre elementos */
+    padding: 10px; /* Espaciado interno para los enlaces */
+    top: 20px; /* Ajusta el valor a tu gusto */
+    text-align: center; /* Centrar texto en los enlaces */
+}
+/* Hover effect for links */
+nav a:hover {
+  color: #007bff; /* Blue color for hover effect */
+}
+
+
+
+
+/* Estilos para dispositivos de escritorio */
+@media (min-width: 769px) {
+  .burger-icon {
+      display: none; /* Ocultar el icono hamburguesa en escritorio */
+  }
+
+  nav {
+      display: flex; /* Mostrar la navegación en dispositivos grandes */
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+/* Estilos para la sección de atajos de teclado */
+.keyboard-shortcuts {
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  padding: 40px 20px;
+  margin: 40px auto;
+  max-width: 1200px; /* Aumentado para permitir más espacio en PC */
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+}
+
+.keyboard-shortcuts h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #f8f9fa;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.keyboard-shortcuts ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Aumentado el tamaño mínimo */
+  gap: 20px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.keyboard-shortcuts li {
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.keyboard-shortcuts li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.keyboard-shortcuts kbd {
+  background-color: #3a3a3a;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-right: 10px;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  min-width: 30px; /* Asegura un ancho mínimo para los kbd */
+  text-align: center; /* Centra el texto dentro de kbd */
+}
+
+.keyboard-shortcuts span {
+  color: #e9ecef;
+  flex-grow: 1; /* Permite que el texto ocupe el espacio restante */
+}
+
+/* Estilos responsivos para la sección de atajos de teclado */
+@media (max-width: 768px) {
+  .keyboard-shortcuts {
+    padding: 30px 15px;
+    margin: 30px 10px;
+  }
+
+  .keyboard-shortcuts h2 {
+    font-size: 1.75rem;
+  }
+
+  .keyboard-shortcuts ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Estilos para la sección de extensiones */
+.extension-section {
+  background-color: #1a1a1a;
+  border-radius: 16px;
+  padding: 60px 30px;
+  margin: 60px auto;
+  max-width: 1200px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.extension-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  color: #f8f9fa;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+.extension-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.extension-card {
+  background-color: #2a2a2a;
+  border-radius: 12px;
+  padding: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.extension-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(31, 38, 135, 0.2);
+}
+
+.extension-card img {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+}
+
+.extension-card h3 {
+  font-size: 1.4rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.extension-card p {
+  font-size: 1rem;
+  color: #b0b0b0;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.extension-card a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #3a3a3a;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.extension-card a:hover {
+  background-color: #4a4a4a;
+}
+
+/* Estilos responsivos para la sección de extensiones */
+@media (max-width: 768px) {
+  .extension-section {
+    padding: 40px 20px;
+    margin: 40px 10px;
+  }
+
+  .extension-section h2 {
+    font-size: 2rem;
+  }
+
+  .extension-grid {
+    grid-template-columns: 1fr;
+  }
+}
