@@ -94,26 +94,13 @@ header {
 
 /* Responsive Design for Navigation */
 @media (max-width: 768px) {
+  header {
+    padding: 0.5em 0;
+  }
+
   .nav ul {
+    padding: 10px 15px; /* Increased vertical padding */
     flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  .nav ul::-webkit-scrollbar {
-    display: none;
-  }
-
-  .nav li {
-    margin: 0 12px;
-  }
-}
-
-@media (max-width: 768px) {
-  .nav ul {
-    padding: 6px 15px;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
@@ -130,17 +117,25 @@ header {
 
   .nav a {
     font-size: 14px;
-    padding: 10px 15px;
+    padding: 12px 15px; /* Increased vertical padding */
   }
 }
 
 @media (max-width: 480px) {
   header {
-    padding: 0.5em 0;
+    padding: 0.75em 0; /* Increased padding */
   }
 
   .nav ul {
-    padding: 4px 10px;
+    padding: 8px 10px; /* Increased vertical padding */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .nav ul::-webkit-scrollbar {
+    display: none;
   }
 
   .nav li {
@@ -149,7 +144,7 @@ header {
 
   .nav a {
     font-size: 13px;
-    padding: 8px 12px;
+    padding: 10px 12px; /* Increased vertical padding */
   }
 }
 
