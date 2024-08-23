@@ -5,84 +5,451 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teleco Do Santos Security Teach</title>
     <link rel="stylesheet" href="design/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Fuente de Google -->
-    <!-- Agregar favicon -->
-   <link rel="icon" type="image/png" href="src/Logo Astrologia Tarot Minimalista Blanco y Negro (1).png">
-   <!-- Favicon para dispositivos Apple -->
-   <link rel="apple-touch-icon" href="src/Logo Astrologia Tarot Minimalista Blanco y Negro (1).png">
-  
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="src/favicon.png">
+    <link rel="apple-touch-icon" href="src/apple-touch-icon.png">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <style>
+        /* Services Section Styles */
+.services {
+  background-color: var(--color-bg);
+  padding: 8rem 0;
+  position: relative;
+  overflow: hidden;
+}
 
+// ... existing code ...
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.service__card {
+  background-color: var(--color-card);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: var(--transition);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.service__card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 216, 255, 0.3);
+}
+
+.service__img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.service__card:hover .service__img {
+  transform: scale(1.05);
+}
+
+.service__content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  position: relative; /* Add this */
+  padding-bottom: 3rem; /* Add this */
+}
+
+.service__title {
+  font-size: 1.3rem;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+.service__text {
+  flex-grow: 1; /* Añadido */
+}
+.service__title {
+  font-size: 1.3rem;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+
+.service__description {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  opacity: 0.9;
+  margin-bottom: 1rem;
+  flexgrow:1;
+}
+
+.service__btn {
+  display: inline-block;
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  padding: 0.6rem 1.25rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: absolute; /* Add this */
+  bottom: 5rem; /* Add this */
+  left: 1.5rem; /* Add this */
+}
+
+.service__btn:hover {
+  background-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 216, 255, 0.4);
+}
+
+/* Responsive Design for Services Section */
+@media (max-width: 1024px) {
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .services__title {
+    font-size: 2.75rem;
+  }
+
+  .services__grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .services__title {
+    font-size: 2.25rem;
+  }
+
+  .service__content {
+    padding: 1.25rem;
+  }
+
+  .service__title {
+    font-size: 1.2rem;
+  }
+
+  .service__description {
+    font-size: 0.9rem;
+  }
+
+  .service__btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Mobile Menu Styles */
+.mobile-menu-btn {
+    display: none; /* Hide by default */
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.mobile-menu-btn.active {
+    transform: rotate(90deg);
+}
+
+@media (max-width: 768px) {
+    .nav .container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .nav__list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--color-bg);
+        padding: 1rem 0;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav__list.show {
+        display: flex;
+    }
+
+    .nav__item {
+        margin: 0.5rem 0;
+    }
+
+    .mobile-menu-btn {
+        display: block; /* Show only on mobile */
+    }
+}
+
+/* Hero Styles */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-image: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+    url("src/fondo.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at top right, rgba(0, 216, 255, 0.1), transparent 50%),
+    radial-gradient(circle at bottom left, rgba(255, 62, 0, 0.1), transparent 50%);
+  z-index: 1;
+}
+
+.hero-content {
+  max-width: 900px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 5rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 20px rgba(0, 216, 255, 0.5);
+  animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn {
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 216, 255, 0.4);
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 216, 255, 0.4);
+}
+
+@keyframes titleGlow {
+  0% {
+    text-shadow: 0 0 20px rgba(0, 216, 255, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 40px rgba(0, 216, 255, 0.8);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(0, 216, 255, 0.5);
+  }
+}
+    </style>
 </head>
-<body>
+<body class="bg-stars">
+    <header class="header fixed w-full z-50">
+        <nav class="nav container flex items-center justify-between py-4">
+            <div class="nav__logo-menu">
+                <h1 href="#" class="nav__logo text-2xl font-bold text-primary">
+                    Teleco Do Santos
+                </h1>
+                <button class="mobile-menu-btn" aria-label="Toggle menu" id="mobileMenuBtn">
+                    <img src="src/menu.svg" alt="Menu" class="w-6 h-6">
+                </button>
+            </div>
+            <ul class="nav__list" id="navList">
+                <li class="nav__item"><a href="#home" class="nav__link hover:text-primary transition-colors">Inicio</a></li>
+                <li class="nav__item"><a href="#services" class="nav__link hover:text-primary transition-colors">Servicios</a></li>
+                <li class="nav__item"><a href="blogs.html" class="nav__link hover:text-primary transition-colors">Publicaciones</a></li>
+                <li class="nav__item"><a href="quienes-somos.html" class="nav__link hover:text-primary transition-colors">Sobre Nosotros</a></li>
+                <li class="nav__item"><a href="contacto.html" class="nav__link hover:text-primary transition-colors">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<header>
-    <nav class="nav">
-        <ul>
-            
-            <li><a href="blogs.html">Publicaciónes</a></li>
-            <li><a href="quienes somos.html">Sobre Nosotros</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-    </nav>
-</header>
-
-<div class="contenedor-principal" id="home">
-    <div class="hero">
-        <div class="hero-image">
-            
-        </div>
-        <div class="hero-content">
-            <h1>Teleco do Santos  </h1>
-<p></p>
+    <main>
+        <section class="hero" id="home">
+          <div class="hero-content">
+            <h1 class="hero-title">Teleco Do Santos Security Tech</h1>
+            <p class="hero-description">Educando a la comunidad sobre tecnologías de seguridad modernas</p>
             <div class="buttons">
-              <a href="https://github.com/Teleco-do-Santos/Teleco-Do-Santos-Web" class="btn btn-github" target="_blank">GitHub</a>
-              <a href="quienes somos.html" class="btn quienes-somos">¿Quiénes Somos?</a>
+              <a href="https://github.com/Teleco-do-Santos/Teleco-Do-Santos-Web" class="btn btn-primary" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a href="quienes-somos.html" class="btn btn-secondary">¿Quiénes Somos?</a>
+            </div>
+          </div>
+          
+          <div class="hero-particles"></div>
+        </section>
+
+        <section class="about section py-20">
+            <div class="about__container container grid md:grid-cols-2 gap-12 items-center">
+                <div class="about__content">
+                    <h2 class="section__title text-3xl font-bold mb-6">Sobre Nosotros</h2>
+                    <p class="about__description mb-8">Teleco Do Santos es un grupo de estudiantes de cuarto medio en telecomunicaciones que lanza el proyecto "Security Teach". Nuestro objetivo es educar a la comunidad local sobre tecnologías de seguridad, incluyendo cámaras y aplicaciones como "Sosafe".</p>
+                    <a href="quienes-somos.html" class="btn btn--outline">Conoce más</a>
+                </div>
+                <div class="about__image">
+                    <img src="src/grupotelco3.png" alt="Equipo Teleco Do Santos" class="about__img rounded-lg shadow-2xl">
+                </div>
+            </div>
+        </section>
+
+        <section class="services section py-20 bg-gradient" id="services">
+            <div class="container">
+                <h2 class="section__title text-3xl font-bold mb-12 text-center">Nuestros Servicios</h2>
+                <div class="services__grid grid md:grid-cols-3 gap-8">
+                    <article class="service__card bg-dark rounded-lg overflow-hidden transition-transform hover:scale-105">
+                        <img src="src/Hikvision-Logo.jpg" alt="Cámaras de seguridad" class="service__img w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="service__title text-xl font-semibold mb-4">Cámaras de Seguridad</h3>
+                            <p class="service__description mb-4">Aprende sobre instalación y uso de cámaras de seguridad</p>
+                            <a href="camaras.html" class="btn btn--small">Leer Más</a>
+                        </div>
+                    </article>
+                    <article class="service__card bg-dark rounded-lg overflow-hidden transition-transform hover:scale-105">
+                        <img src="src/ciberseguridad1.webp" alt="Seguridad del celular" class="service__img w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="service__title text-xl font-semibold mb-4">Seguridad del Celular</h3>
+                            <p class="service__description mb-4">Descubre métodos efectivos para proteger tu Dispositivos</p>
+                            <a href="telefonos.html" class="btn btn--small">Leer Más</a>
+                        </div>
+                    </article>
+                    <article class="service__card bg-dark rounded-lg overflow-hidden transition-transform hover:scale-105">
+                        <img src="src/sofafe.png" alt="Aplicación Sosafe" class="service__img w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="service__title text-xl font-semibold mb-4">Sosafe</h3>
+                            <p class="service__description mb-4">Guía completa de instalación y uso de la app Sosafe.</p>
+                            <a href="sosafe.html" class="btn btn--small">Leer Más</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta section py-20">
+            <div class="cta__container container text-center">
+                <h2 class="cta__title text-4xl font-bold mb-6">¿Listo para aprender sobre seguridad?</h2>
+                <p class="cta__description text-xl mb-8">Únete a nuestro próximo evento o accede a nuestros recursos en línea.</p>
+                <a href="#" class="btn btn--large">Comenzar Ahora</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer bg-dark py-12">
+        <div class="footer__container container grid md:grid-cols-3 gap-8">
+            <div class="footer__content">
+                <img src="src/Logo Astrologia Tarot Minimalista Blanco y Negro (1).png" alt="Teleco Do Santos Logo" class="footer__logo mb-4 w-40">
+                <p class="footer__description">Educando sobre tecnologías de seguridad para un futuro más seguro.</p>
+            </div>
+            <div class="footer__links">
+                <h3 class="footer__title text-lg font-semibold mb-4">Enlaces Rápidos</h3>
+                <ul class="footer__list space-y-2">
+                    <li><a href="#home" class="footer__link hover:text-primary transition-colors">Inicio</a></li>
+                    <li><a href="servicios.html" class="footer__link hover:text-primary transition-colors">Servicios</a></li>
+                    <li><a href="blogs.html" class="footer__link hover:text-primary transition-colors">Publicaciones</a></li>
+                    <li><a href="quienes-somos.html" class="footer__link hover:text-primary transition-colors">Sobre Nosotros</a></li>
+                    <li><a href="contacto.html" class="footer__link hover:text-primary transition-colors">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer__social">
+                <h3 class="footer__title text-lg font-semibold mb-4">Síguenos</h3>
+                <div class="footer__social-icons flex space-x-4">
+                    <a href="#" class="footer__social-link hover:text-primary transition-colors">
+                        <img src="src/icons8-facebook-nuevo-48.png" alt="Facebook" class="w-6 h-6">
+                    </a>
+                    <a href="#" class="footer__social-link hover:text-primary transition-colors">
+                        <img src="src/icons8-x-50.png" alt="Twitter" class="w-6 h-6">
+                    </a>
+                    <a href="#" class="footer__social-link hover:text-primary transition-colors">
+                        <img src="src/insta1.png" alt="Instagram" class="w-6 h-6">
+                    </a>
+                    <a href="#" class="footer__social-link hover:text-primary transition-colors">
+                        <img src="src/icons8-linkedin-48.png" alt="LinkedIn" class="w-6 h-6">
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-</div>      
-<!-- Nueva sección añadida -->
-<div class="additional-content">
-  <div class="left-content">
-      <img src="src/Logo Astrologia Tarot Minimalista Blanco y Negro (1).png" alt="Imagen a la izquierda" class="side-image">
-      <p>Teleco Do Santos es un grupo de estudiantes de cuarto medio en telecomunicaciones que lanza el proyecto “Security Teach”. Su objetivo es educar a la comunidad local sobre tecnologías de seguridad, incluyendo cámaras y la aplicaciónes como "Sosafe".</p>
-  </div>
-  <div class="right-content">
-      <p>Teleco Do Santos ofrecerá un stand con materiales didácticos para que asistentes de todas las edades aprendan sobre tecnologías de seguridad. Quienes no puedan acudir, tendrán acceso a videos y manuales en línea para informarse de manera autónoma.</p>
-      <img src="src/skibidi topilet  a fa fa.png" alt="Imagen a la derecha" class="side-image">
-  </div>
-</div>
-</div>
-</div>
+        <div class="footer__bottom border-t border-gray-700 mt-8 pt-8 text-center">
+            <p>&copy; 2024 Teleco Do Santos. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
-<section class="blog" id="services">
-  <h2>Post</h2>
-  <div class="blog-posts">
-      <a href="camaras.html" class="blog-post"> <!-- Enlace al servicio 1 -->
-          <h3>Camaras</h3>
-          <img src="src/BBBB.jpeg" alt="Servicio 1">
-          <p>En esta seccion se enseñara respectos camaras de seguridas y su instalacion.</p>
-          <button class="leer-mas">Leer Más</button>
-      </a>
-      <a href="telefonos.html" class="blog-post"> <!-- Enlace al servicio 2 -->
-          <h3>Seguridad del celular</h3>
-          <img src="src/CCCC.jpeg" alt="Servicio 2">
-          <p>En esta seccion se mostrara distintos metodos de seguridad dentro del celular.</p>
-          <button class="leer-mas">Leer Más</button>
-      </a>
-      <a href="sosafe.html" class="blog-post"> <!-- Enlace al servicio 3 -->
-          <h3>Sosafe</h3>
-          <img src="src/sofafe.png" alt="Servicio 3">
-          <p>¡Se enseñara como intalar sosafe y como usarla!</p>
-          <button class="leer-mas">Leer Más</button>
-      </a>
-  </div>
-</section>
-<footer>
-    <p>&copy; 2024 Teleco Do Santos. Todos los derechos reservados.</p>
-</footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navList = document.getElementById('navList');
 
-<script src="script.js"></script>
+            mobileMenuBtn.addEventListener('click', function() {
+                navList.classList.toggle('show');
+                this.classList.toggle('active');
+            });
+
+            // Cerrar el menú al hacer clic en un enlace
+            const navLinks = document.querySelectorAll('.nav__link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navList.classList.contains('show')) {
+                        navList.classList.remove('show');
+                        mobileMenuBtn.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-
