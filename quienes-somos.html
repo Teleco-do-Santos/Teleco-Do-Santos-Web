@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quienes Somos | Teleco do Santos</title>
+  <link rel="stylesheet" href="design/estilos.css">
+  <link rel="icon" type="image/png" href="src/favicon.png">
+  <link rel="apple-touch-icon" href="src/apple-touch-icon.png">
+  
+  <style>
+    :root {
+      --header-height: 80px;
+      --accent: 33, 150, 243; /* Updated accent color */
+      --text-color: #ffffff;
+      --background-color: #0a0a0a;
+      --accent-gradient: linear-gradient(45deg, rgba(var(--accent), 1), rgba(var(--accent), 0.8));
+    }
+
+    body {
+      padding-top: var(--header-height);
+      font-family: 'Inter', sans-serif; /* Modern, clean font */
+    }
+
+    .site-header {
+      background: rgba(10, 10, 10, 0.8);
+      backdrop-filter: blur(10px);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      height: var(--header-height);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .site-header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--text-color);
+      font-size: 1.5rem;
+      font-weight: bold;
+      transition: opacity 0.3s ease;
+    }
+
+    .logo:hover {
+      opacity: 0.8;
+    }
+
+    .logo-image {
+      height: 40px;
+      width: auto;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li {
+      margin: 0 0 0 2rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 500;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 0.5rem 0;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-gradient);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      background: var(--accent-gradient);
+      color: var(--background-color);
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      margin-left: 2rem;
+      box-shadow: 0 4px 15px rgba(var(--accent), 0.3);
+      text-decoration: none;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(var(--accent), 0.4);
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      z-index: 1001;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger-icon {
+      display: block;
+      position: relative;
+      width: 30px;
+      height: 20px;
+    }
+
+    .hamburger-icon .line {
+      display: block;
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      background: var(--text-color);
+      border-radius: 2px;
+      opacity: 1;
+      left: 0;
+      transform: rotate(0deg);
+      transition: .25s ease-in-out;
+    }
+
+    .hamburger-icon .line:nth-child(1) {
+      top: 0px;
+    }
+
+    .hamburger-icon .line:nth-child(2) {
+      top: 9px;
+    }
+
+    .hamburger-icon .line:nth-child(3) {
+      top: 18px;
+    }
+
+    .mobile-menu-toggle.active .line:nth-child(1) {
+      top: 9px;
+      transform: rotate(45deg);
+    }
+
+    .mobile-menu-toggle.active .line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-menu-toggle.active .line:nth-child(3) {
+      top: 9px;
+      transform: rotate(-45deg);
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding-top: 0;
+      }
+
+      .site-header {
+        position: relative;
+        height: auto;
+        padding: 1rem 0;
+      }
+
+      .site-header .container {
+        flex-wrap: wrap;
+      }
+
+      .main-nav {
+        display: none;
+        width: 100%;
+        margin-top: 1rem;
+      }
+
+      .mobile-menu-toggle {
+        display: block;
+      }
+
+      .site-header.menu-open .main-nav {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .nav-links li {
+        margin: 0.5rem 0;
+      }
+
+      .nav-cta {
+        margin: 1rem 0 0 0;
+        text-align: center;
+        display: block;
+      }
+
+      .mobile-menu-toggle {
+        display: block;
+      }
+
+      .main-nav {
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        background-color: rgba(10, 10, 10, 0.432);
+        padding: 1rem;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 1000;
+      }
+
+      .main-nav.show {
+        transform: translateY(0);
+      }
+
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav-links li {
+        margin: 1rem 0;
+      }
+
+      .nav-cta {
+        margin-top: 1rem;
+      }
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      color: var(--text-color);
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .content-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .text-content {
+      flex: 1;
+    }
+
+    .image-content {
+      flex: 1;
+    }
+
+    .mission-photo {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(var(--accent), 0.1);
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: var(--accent-gradient);
+      color: var(--background-color);
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(var(--accent), 0.3);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(var(--accent), 0.4);
+    }
+
+    @media (max-width: 768px) {
+      .content-wrapper {
+        flex-direction: column;
+      }
+
+      .image-content {
+        order: -1;
+      }
+    }
+
+    .site-footer {
+      background-color: var(--background-color);
+      color: var(--text-color);
+      padding: 3rem 0 1rem;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .footer-logo img {
+      height: 40px;
+      width: auto;
+    }
+
+    .footer-links, .footer-social {
+      margin-top: 1rem;
+    }
+
+    .footer-links h3, .footer-social h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-links ul, .footer-social ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li, .footer-social li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links a, .footer-social a {
+      color: var(--text-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover, .footer-social a:hover {
+      color: rgba(var(--accent), 1);
+    }
+
+    .footer-social ul {
+      display: flex;
+      gap: 1rem;
+      padding: 0;
+      list-style: none;
+    }
+
+    .footer-social li {
+      margin: 0;
+    }
+
+    .social-icon {
+      width: 24px;
+      height: 24px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icon:hover {
+      transform: scale(1.2);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .footer-logo, .footer-links, .footer-social {
+        margin-bottom: 2rem;
+      }
+
+      .footer-social ul {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="src/logo.svg" alt="Teleco do Santos" class="logo-image">
+      </a>
+      <nav class="main-nav">
+        <ul class="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="quienes-somos.html" class="active">Quiénes Somos</a></li>
+          
+          <li><a href="blogs.html">Publicaciones</a></li>
+        </ul>
+      </nav>
+      <a href="contacto.html" class="nav-cta">Contáctanos</a>
+      <button class="mobile-menu-toggle" aria-label="Menú" aria-expanded="false">
+        <span class="hamburger-icon">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </span>
+      </button>
+    </div>
+  </header>
+
+
+    <section class="about-us">
+      <div class="container">
+        <div class="content-wrapper">
+          <div class="text-content">
+            <h2>Teleco do Santos</h2>
+            <p>Somos un grupo de estudiantes de cuarto medio de la especialidad de telecomunicaciones del colegio Cardenal Raúl Silva Henríquez. Nuestro proyecto "Security Tech" para la Feria Técnico Profesional (FTP) busca revolucionar la forma en que las personas entienden y utilizan las tecnologías de seguridad.</p>
+            <p>A través de "Teleco te enseña", nos proponemos brindar conocimientos accesibles sobre las últimas tendencias en seguridad tecnológica, mejorando la protección de las personas en su entorno diario.</p>
+          </div>
+          <div class="image-content">
+            <img src="src/grupotelco3.png" alt="Equipo Teleco do Santos" class="team-photo">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="our-team">
+      <div class="container">
+        <h2>Nuestro Equipo</h2>
+        <div class="team-grid">
+          <div class="team-member">
+            <img src="src/per1.jpeg" alt="Sebastian Canales">
+            <h3>Sebastian Canales</h3>
+            <p>Líder</p>
+          </div>
+          <div class="team-member">
+            <img src="src/per1.jpeg" alt="Maximiliano Cornejo">
+            <h3>Maximiliano Cornejo</h3>
+            <p>Vocero</p>
+          </div>
+          <div class="team-member">
+            <img src="src/per1.jpeg" alt="Aaron Morales">
+            <h3>Aaron Morales</h3>
+            <p>Diseñador y Programador</p>
+          </div>
+          <div class="team-member">
+            <img src="src/per1.jpeg" alt="Juan Varas">
+            <h3>Juan Varas</h3>
+            <p>Diseñador y Programador</p>
+          </div>
+          <div class="team-member">
+            <img src="src/per1.jpeg" alt="Isidora Opazo">
+            <h3>Isidora Opazo</h3>
+            <p>Encargada de Traducción</p>
+          </div>
+          <div class="team-member">
+            <img src="src/per1.jpeg" alt="Vicente Morales">
+            <h3>Vicente Morales</h3>
+            <p>Documentación</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="our-mission">
+      <div class="container">
+        <h2 class="section-title">Nuestra Misión</h2>
+        <div class="content-wrapper">
+          <div class="text-content">
+            <p>En Teleco do Santos, nos dedicamos a democratizar el conocimiento sobre seguridad tecnológica. Creemos que la información es poder, y nuestro objetivo es empoderar a cada individuo con las herramientas y el conocimiento necesarios para protegerse en el mundo digital actual.</p>
+            <a href="#" class="cta-button">Conoce más sobre nuestro proyecto</a>
+          </div>
+          <div class="image-content">
+            <img src="src/ciberseguridad1.webp" alt="Nuestra Misión" class="mission-photo">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftp-inspiration">
+      <div class="container">
+        <h2>Feria TP e Inspiración</h2>
+        <div class="content-wrapper">
+          <div class="text-content">
+            <p>La Feria Técnico Profesional (FTP) es el escenario donde nuestras ideas cobran vida. Enfrentados al desafío de la seguridad local, decidimos abordar la problemática desde una perspectiva educativa, proporcionando conocimientos accesibles sobre tecnologías de seguridad a nuestros invitados.</p>
+            <p>Nuestra inspiración surge de la necesidad de crear soluciones que no solo sean efectivas, sino también comprensibles para usuarios de todos los niveles de conocimiento tecnológico.</p>
+          </div>
+          <div class="image-content">
+            <img src="src/skibidi topilet  a fa fa.png" alt="Feria Técnico Profesional" class="ftp-photo">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="src/logo-footer.svg" alt="Teleco do Santos Logo">
+        </div>
+        <div class="footer-links">
+          <h3>Enlaces Rápidos</h3>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="blogs.html">Publicaciones</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h3>Síguenos</h3>
+          <ul>
+            <li><a href="#" aria-label="Facebook"><img src="src/facebook-icon.png" alt="Facebook" class="social-icon"></a></li>
+            <li><a href="#" aria-label="Twitter"><img src="src/twitter-icon.png" alt="Twitter" class="social-icon"></a></li>
+            <li><a href="#" aria-label="Instagram"><img src="src/instagram-icon.png" alt="Instagram" class="social-icon"></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Teleco Do Santos. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+      const mainNav = document.querySelector('.main-nav');
+      const header = document.querySelector('.site-header');
+
+      mobileMenuToggle.addEventListener('click', () => {
+        const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+        mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
+        mainNav.classList.toggle('show');
+        header.classList.toggle('menu-open');
+        mobileMenuToggle.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>
