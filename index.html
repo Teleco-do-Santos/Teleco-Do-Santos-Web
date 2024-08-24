@@ -11,143 +11,274 @@
     <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
     <style>
         /* Services Section Styles */
-.services {
-  background-color: var(--color-bg);
-  padding: 8rem 0;
+.services-section {
+  background-color: #0f0f0f;
+  padding: 100px 0;
   position: relative;
   overflow: hidden;
 }
 
-// ... existing code ...
-
-.services__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
+.services-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at top right, rgba(29, 78, 216, 0.15), transparent 50%),
+              radial-gradient(circle at bottom left, rgba(220, 38, 38, 0.1), transparent 50%);
+  z-index: 1;
 }
 
-.service__card {
-  background-color: var(--color-card);
-  border-radius: 1rem;
-  overflow: hidden;
-  transition: var(--transition);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-.service__card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 216, 255, 0.3);
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
 }
 
-.service__img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  transition: var(--transition);
-}
-
-.service__card:hover .service__img {
-  transform: scale(1.05);
-}
-
-.service__content {
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  position: relative; /* Add this */
-  padding-bottom: 3rem; /* Add this */
-}
-
-.service__title {
-  font-size: 1.3rem;
-  color: var(--color-primary);
-  margin-bottom: 0.75rem;
+.section-title {
+  font-size: 3rem;
   font-weight: 700;
-}
-.service__text {
-  flex-grow: 1; /* Añadido */
-}
-.service__title {
-  font-size: 1.3rem;
-  color: var(--color-primary);
-  margin-bottom: 0.75rem;
-  font-weight: 700;
-}
-
-
-.service__description {
-  font-size: 0.95rem;
-  color: var(--color-text);
-  opacity: 0.9;
-  margin-bottom: 1rem;
-  flexgrow:1;
-}
-
-.service__btn {
-  display: inline-block;
-  background-color: var(--color-secondary);
-  color: var(--color-text);
-  padding: 0.6rem 1.25rem;
-  border-radius: 9999px;
-  text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 600;
-  transition: var(--transition);
+  text-align: center;
+  margin-bottom: 60px;
+  color: #ffffff;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  position: absolute; /* Add this */
-  bottom: 5rem; /* Add this */
-  left: 1.5rem; /* Add this */
+  letter-spacing: 2px;
+  background: linear-gradient(45deg, #3b82f6, #ef4444);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.service__btn:hover {
-  background-color: var(--color-primary);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 216, 255, 0.4);
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
 }
 
-/* Responsive Design for Services Section */
-@media (max-width: 1024px) {
-  .services__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.service-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.service-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.service-image-container {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.service-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-image {
+  transform: scale(1.1);
+}
+
+.service-content {
+  padding: 30px;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.service-description {
+  font-size: 1rem;
+  color: #a0aec0;
+  margin-bottom: 20px;
+}
+
+.service-cta {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3b82f6;
+  transition: color 0.3s ease;
+}
+
+.service-cta i {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-cta {
+  color: #ef4444;
+}
+
+.service-card:hover .service-cta i {
+  transform: translateX(5px);
+}
+
+/* CTA Section Styles */
+.cta-section {
+  position: relative;
+  padding: 120px 0;
+  overflow: hidden;
+  background-color: #000;
+  color: #fff;
+}
+
+.cta-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cta-content {
+  margin-bottom: 40px;
+}
+
+.cta-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: linear-gradient(45deg, #00f2fe, #4facfe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(79, 172, 254, 0.5);
+}
+
+.cta-description {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #a0aec0;
+  line-height: 1.6;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.cta-button {
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.cta-button.primary {
+  background: linear-gradient(45deg, #00f2fe, #4facfe);
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4);
+}
+
+.cta-button.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(79, 172, 254, 0.6);
+}
+
+.cta-button.secondary {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #4facfe;
+}
+
+.cta-button.secondary:hover {
+  background: rgba(79, 172, 254, 0.1);
+  transform: translateY(-3px);
+}
+
+.cta-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at top right, rgba(79, 172, 254, 0.1), transparent 50%),
+    radial-gradient(circle at bottom left, rgba(0, 242, 254, 0.1), transparent 50%);
+  z-index: 1;
 }
 
 @media (max-width: 768px) {
-  .services__title {
-    font-size: 2.75rem;
+  .cta-section {
+    padding: 80px 0;
   }
 
-  .services__grid {
-    grid-template-columns: 1fr;
-    max-width: 500px;
-    margin: 0 auto;
+  .cta-title {
+    font-size: 2.5rem;
+  }
+
+  .cta-description {
+    font-size: 1rem;
+  }
+
+  .cta-actions {
+    flex-direction: column;
+  }
+
+  .cta-button {
+    width: 100%;
   }
 }
 
-@media (max-width: 480px) {
-  .services__title {
-    font-size: 2.25rem;
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .services-section {
+    padding: 60px 0;
   }
 
-  .service__content {
-    padding: 1.25rem;
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
   }
 
-  .service__title {
-    font-size: 1.2rem;
+  .services-grid {
+    gap: 30px;
   }
 
-  .service__description {
-    font-size: 0.9rem;
+  .service-content {
+    padding: 20px;
   }
 
-  .service__btn {
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
+  .cta-section {
+    padding: 60px 0;
+  }
+
+  .cta-title {
+    font-size: 2rem;
+  }
+
+  .cta-description {
+    font-size: 1.125rem;
   }
 }
 
@@ -297,6 +428,57 @@
     text-shadow: 0 0 20px rgba(0, 216, 255, 0.5);
   }
 }
+
+/* Actualizar el estilo del botón */
+.btn, .btn--small {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+  box-shadow: 0 0 20px rgba(0, 216, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: inline-block;
+}
+
+.btn--small {
+  padding: 0.5rem 1.5rem;
+  font-size: 0.9rem;
+}
+
+.btn:hover, .btn--small:hover {
+  background-color: var(--color-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(255, 62, 0, 0.7);
+}
+
+.service__card {
+  position: relative;
+}
+
+.service__card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.service__card .btn {
+  position: relative;
+  z-index: 2;
+}
+
+.service__card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  z-index: 1;
+}
     </style>
 </head>
 <body class="bg-stars">
@@ -349,44 +531,62 @@
             </div>
         </section>
 
-        <section class="services section py-20 bg-gradient" id="services">
-            <div class="container">
-                <h2 class="section__title text-3xl font-bold mb-12 text-center">Nuestros Servicios</h2>
-                <div class="services__grid grid md:grid-cols-3 gap-8">
-                    <article class="service__card bg-dark rounded-lg overflow-hidden transition-transform hover:scale-105">
-                        <img src="src/Hikvision-Logo.jpg" alt="Cámaras de seguridad" class="service__img w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="service__title text-xl font-semibold mb-4">Cámaras de Seguridad</h3>
-                            <p class="service__description mb-4">Aprende sobre instalación y uso de cámaras de seguridad</p>
-                            <a href="camaras.html" class="btn btn--small">Leer Más</a>
-                        </div>
-                    </article>
-                    <article class="service__card bg-dark rounded-lg overflow-hidden transition-transform hover:scale-105">
-                        <img src="src/ciberseguridad1.webp" alt="Seguridad del celular" class="service__img w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="service__title text-xl font-semibold mb-4">Seguridad del Celular</h3>
-                            <p class="service__description mb-4">Descubre métodos efectivos para proteger tu Dispositivos</p>
-                            <a href="telefonos.html" class="btn btn--small">Leer Más</a>
-                        </div>
-                    </article>
-                    <article class="service__card bg-dark rounded-lg overflow-hidden transition-transform hover:scale-105">
-                        <img src="src/sofafe.png" alt="Aplicación Sosafe" class="service__img w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="service__title text-xl font-semibold mb-4">Sosafe</h3>
-                            <p class="service__description mb-4">Guía completa de instalación y uso de la app Sosafe.</p>
-                            <a href="sosafe.html" class="btn btn--small">Leer Más</a>
-                        </div>
-                    </article>
-                </div>
+        <section class="services-section" id="services">
+          <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="services-grid">
+              <article class="service-card">
+                <a href="camaras.html" class="service-link">
+                  <div class="service-image-container">
+                    <img src="src/Hikvision-Logo.jpg" alt="Cámaras de seguridad" class="service-image">
+                  </div>
+                  <div class="service-content">
+                    <h3 class="service-title">Cámaras de Seguridad</h3>
+                    <p class="service-description">Aprende sobre instalación y uso de cámaras de seguridad</p>
+                    <span class="service-cta">Leer Más <i class="fas fa-arrow-right"></i></span>
+                  </div>
+                </a>
+              </article>
+              <article class="service-card">
+                <a href="telefonos.html" class="service-link">
+                  <div class="service-image-container">
+                    <img src="src/ciberseguridad1.webp" alt="Seguridad del celular" class="service-image">
+                  </div>
+                  <div class="service-content">
+                    <h3 class="service-title">Seguridad del Celular</h3>
+                    <p class="service-description">Descubre métodos efectivos para proteger tus dispositivos</p>
+                    <span class="service-cta">Leer Más <i class="fas fa-arrow-right"></i></span>
+                  </div>
+                </a>
+              </article>
+              <article class="service-card">
+                <a href="sosafe.html" class="service-link">
+                  <div class="service-image-container">
+                    <img src="src/sofafe.png" alt="Aplicación Sosafe" class="service-image">
+                  </div>
+                  <div class="service-content">
+                    <h3 class="service-title">Sosafe</h3>
+                    <p class="service-description">Guía completa de instalación y uso de la app Sosafe</p>
+                    <span class="service-cta">Leer Más <i class="fas fa-arrow-right"></i></span>
+                  </div>
+                </a>
+              </article>
             </div>
+          </div>
         </section>
 
-        <section class="cta section py-20">
-            <div class="cta__container container text-center">
-                <h2 class="cta__title text-4xl font-bold mb-6">¿Listo para aprender sobre seguridad?</h2>
-                <p class="cta__description text-xl mb-8">Únete a nuestro próximo evento o accede a nuestros recursos en línea.</p>
-                <a href="#" class="btn btn--large">Comenzar Ahora</a>
+        <section class="cta-section">
+          <div class="cta-container">
+            <div class="cta-content">
+              <h2 class="cta-title">Explora el futuro de la seguridad</h2>
+              <p class="cta-description">Únete a nuestra misión de crear un mundo más seguro a través de la tecnología y el conocimiento.</p>
             </div>
+            <div class="cta-actions">
+              <a href="#" class="cta-button primary">Comenzar ahora</a>
+              <a href="#" class="cta-button secondary">Explorar recursos</a>
+            </div>
+          </div>
+          <div class="cta-background"></div>
         </section>
     </main>
 
