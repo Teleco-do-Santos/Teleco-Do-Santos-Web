@@ -3,49 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zona de Contacto</title>
+    <title>Contacto | Teleco do Santos</title>
     <link rel="stylesheet" href="design/contacto.css">
-     <!-- Agregar favicon -->
-     <link rel="icon" type="image/png" href="src/Logo Astrologia Tarot Minimalista Blanco y Negro (1).png">
-     <!-- Favicon para dispositivos Apple -->
-     <link rel="apple-touch-icon" href="src/Logo Astrologia Tarot Minimalista Blanco y Negro (1).png">
+    <link rel="icon" type="image/png" href="src/Logo Astrologia Tarot Minimalista Blanco y Negro (1).png">
+    <link rel="apple-touch-icon" href="src/Logo Astrologia Tarot Minimalista Blanco y Negro (1).png">
+    <!-- Añadir fuente moderna -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Añadir iconos de Font Awesome -->
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <style>
+        .burger-icon {
+            display: none;
+            cursor: pointer;
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .burger-icon img {
+            width: 30px;
+            height: auto;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .burger-icon {
+                display: block;
+            }
+            
+            .logo {
+                margin-left: 40px;
+            }
+            
+            #nav-menu {
+                display: none;
+            }
+            
+            #nav-menu.show {
+                display: block;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">
-                <a href="index.html">Teleco do Santos</a> <!-- Enlace a la página de inicio -->
+                <a href="index.html">Teleco do Santos</a>
             </div>
-            <ul>
-                <li><a href="index.html">Inicio</a></li> <!-- Enlace a la página de inicio -->
+            <div class="burger-icon" id="burger-icon">
+                <img src="src/icons8-menú-xbox-80.png" alt="Menu icon">
+            </div>
+            <ul id="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="blogs.html">Publicaciones</a></li>
+                
+                <li><a href="contacto.html" class="active">Contacto</a></li>
             </ul>
         </nav>
     </header>
     
     <main>
+        <div class="hero">
+            <h1>Conecta con el Futuro</h1>
+            <p>Educando a la comunidad sobre tecnologías de seguridad modernas </p>
+        </div>
         <div class="container">
-            <h1>Contacto</h1>
-            <p>¡Hola! Si deseas ponerte en contacto conmigo, simplemente haz clic en los íconos de abajo:</p>
-            <div class="social-icons">
-                <a href="mailto:telecodosantos@gmail.com" title="Enviar un correo">
-                    <img src="src/gmail.png" alt="Gmail">
-                </a>
-                <a href="https://github.com/Teleco-do-Santos" title="Visitar mi GitHub">
-                    <img src="src/git1.png" alt="GitHub">
-                </a>
-                <a href="https://x.com/TelecoDoSantos" title="Seguirme en Twitter">
-                    <img src="src/x.jpg" alt="Twitter">
-                </a>
-                <a href="https://linkedin.com/in/tuusuario" title="Conectar en LinkedIn">
-                    <img src="src/linkedin.jfif" alt="LinkedIn">
-                </a>
-            </div>
+
+            <form class="contact-form" id="contact-form">
+                <h2>Envíame un mensaje</h2>
+                <input type="text" name="name" placeholder="Tu nombre" required>
+                <input type="email" name="email" placeholder="Tu correo electrónico" required>
+                <textarea name="message" placeholder="Tu mensaje" required></textarea>
+                <button type="submit" class="btn-primary">Enviar Mensaje</button>
+            </form>
+
             <div class="contact-info">
                 <h2>Información de Contacto</h2>
-                <p>Correo electrónico: <a href="mailto:telecodosantos@gmail.com">telecodosantos@gmail.com</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:telecodosantos@gmail.com">telecodosantos@gmail.com</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> Santiago, Chile</p>
             </div>
+            
+            <div class="social-icons">
+                <a href="https://www.instagram.com/your_instagram_handle" title="Sígueme en Instagram" class="icon-btn">
+                    <img src="src/insta1.png" alt="Instagram icon">
+                </a>
+                <a href="https://github.com/Teleco-do-Santos" title="Visitar mi GitHub" class="icon-btn">
+                    <img src="src/git.png" alt="GitHub icon">
+                </a>
+                <a href="https://x.com/TelecoDoSantos" title="Seguirme en Twitter" class="icon-btn">
+                    <img src="src/icons8-x-50.png" alt="Twitter icon">
+                </a>
+                <a href="https://linkedin.com/in/tuusuario" title="Conectar en LinkedIn" class="icon-btn">
+                    <img src="src/icons8-linkedin-48.png" alt="LinkedIn icon">
+                </a>
+            </div>
+           
         </div>
     </main>
-    <script src="script.js"></script>
+
+    <footer>
+        <p>&copy; 2024 Teleco do Santos. Todos los derechos reservados.</p>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        // https://dashboard.emailjs.com/admin/account
+        emailjs.init('1xGTpvfrUjRpylBDs');
+    })();
+
+    window.onload = function() {
+        document.querySelector('.contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            emailjs.sendForm('service_bwqob7v', 'template_airpc9f', this)
+                .then(function() {
+                    console.log('SUCCESS!');
+                    alert('Mensaje enviado con éxito');
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    alert('Error al enviar el mensaje');
+                });
+        });
+    }
+</script>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const burgerIcon = document.getElementById('burger-icon');
+            const navMenu = document.getElementById('nav-menu');
+
+            burgerIcon.addEventListener('click', function() {
+                navMenu.classList.toggle('show');
+                burgerIcon.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>
