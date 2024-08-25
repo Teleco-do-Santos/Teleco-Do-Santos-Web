@@ -112,3 +112,27 @@ const observer = new MutationObserver((mutations) => {
 });
 
 observer.observe(document.body, { childList: true, subtree: true });
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navList = document.getElementById('navList');
+
+    mobileMenuBtn.addEventListener('click', function() {
+        navList.classList.toggle('show');
+        this.classList.toggle('active');
+    });
+
+    // Cerrar el menú al hacer clic en un enlace
+    const navLinks = document.querySelectorAll('.nav__link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navList.classList.contains('show')) {
+                navList.classList.remove('show');
+                mobileMenuBtn.classList.remove('active');
+            }
+        });
+    });
+});
